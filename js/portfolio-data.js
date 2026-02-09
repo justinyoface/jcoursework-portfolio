@@ -102,6 +102,7 @@ const portfolioProjects = [
     {
         id: 1,
         title: "CoursePeace",
+        slug: "coursepeace",
         folder: "project-01_coursepeace",
         imageFormat: "gif",  // Specify file format: 'jpg', 'png', or 'gif' (default: 'jpg')
         tags: ["illustration"],
@@ -112,6 +113,7 @@ const portfolioProjects = [
     {
         id: 2,
         title: "Umaga Brand Illustrations",
+        slug: "umaga-brand-illustrations",
         folder: "project-02_umaga-brand-illustrations",
         tags: ["illustration"],
         description: "A series of whimsical character illustrations created for a children's book project, featuring vibrant colors and expressive designs.",
@@ -121,6 +123,7 @@ const portfolioProjects = [
     {
         id: 3,
         title: "Drip Collective Tee",
+        slug: "drip-collective-tee",
         folder: "project-03_drip-collective-tee",
         tags: ["illustration"],
         description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
@@ -130,6 +133,7 @@ const portfolioProjects = [
     {
         id: 4,
         title: "Artwork Wear Animation",
+        slug: "artwork-wear-animation",
         folder: "project-04_artwork-wear-animation",
         imageFormat: "gif",  // GIF format for animated posters
         tags: ["motion", "illustration"],
@@ -140,6 +144,7 @@ const portfolioProjects = [
     {
         id: 5,
         title: "Coursework Fruits of Labor",
+        slug: "coursework-fruits-of-labor",
         folder: "project-05_coursework-fruits-of-labor",
         tags: ["illustration"],
         description: "A detailed digital portrait study exploring light, shadow, and color harmony using contemporary illustration techniques.",
@@ -149,6 +154,7 @@ const portfolioProjects = [
     {
         id: 6,
         title: "Hebru Brand NYC Flyer",
+        slug: "hebru-brand-nyc-flyer",
         folder: "project-06_hebru-brand-nyc-flyer",
         tags: ["motion", "illustration"],
         description: "A 2D animated explainer video breaking down complex concepts into simple, engaging visual narratives for an educational platform.",
@@ -158,6 +164,7 @@ const portfolioProjects = [
     {
         id: 7,
         title: "Coursework Kid Print",
+        slug: "coursework-kid-print",
         folder: "project-07_coursework-kid-print",
         tags: ["illustration"],
         description: "Product packaging design for an organic coffee brand, featuring minimalist aesthetics and eco-friendly design principles.",
@@ -167,6 +174,7 @@ const portfolioProjects = [
     {
         id: 8,
         title: "Hebru Brand Fly Boy Pizza Tee",
+        slug: "hebru-brand-fly-boy-pizza-tee",
         folder: "project-08_hebru-brand-fly-boy-pizza-tee",
         tags: ["illustration"],
         description: "A series of editorial illustrations for a lifestyle magazine, exploring contemporary themes through a unique visual style.",
@@ -176,6 +184,7 @@ const portfolioProjects = [
     {
         id: 9,
         title: "Hebru Brand Rocket Flyer",
+        slug: "hebru-brand-rocket-flyer",
         folder: "project-09_hebru-brand-rocket-flyer",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
@@ -185,6 +194,7 @@ const portfolioProjects = [
     {
         id: 10,
         title: "SPC Packaging Design",
+        slug: "spc-packaging-design",
         folder: "project-10_SPC-packaging-design",
         tags: ["design", "illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
@@ -194,6 +204,7 @@ const portfolioProjects = [
     {
         id: 11,
         title: "This Is What Asian Looks Like",
+        slug: "this-is-what-asian-looks-like",
         folder: "project-11_This-Is-What-Asian-Looks-Like",
         tags: ["design"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
@@ -203,6 +214,7 @@ const portfolioProjects = [
     {
         id: 12,
         title: "SPC x Nine Bar T-Shirt",
+        slug: "spc-x-nine-bar-t-shirt",
         folder: "project-12_SPCxNine-Bar-T-Shirt",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
@@ -212,6 +224,7 @@ const portfolioProjects = [
     {
         id: 13,
         title: "Coursework King Marie Tee",
+        slug: "coursework-king-marie-tee",
         folder: "project-13_Coursework-King-Marie-Tee",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
@@ -221,6 +234,7 @@ const portfolioProjects = [
     {
         id: 14,
         title: "Hebru Brand Fat Tiger Flyer",
+        slug: "hebru-brand-fat-tiger-flyer",
         folder: "project-14_Hebru-Brand-FatTiger-Flyer",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",

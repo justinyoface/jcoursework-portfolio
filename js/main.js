@@ -152,7 +152,7 @@ function createPortfolioItem(project, index) {
     item.appendChild(overlay);
 
     item.addEventListener('click', () => {
-        window.location.href = 'case-study.html?id=' + project.id;
+        window.location.href = '/' + project.slug;
     });
 
     return item;

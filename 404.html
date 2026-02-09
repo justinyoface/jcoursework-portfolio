@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="visibility:hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    // Route detection: /info goes to about page, everything else is a project slug
+    (function() {
+        var path = window.location.pathname.replace(/\/$/, '');
+        if (path === '/info') {
+            window.__route = 'info';
+            fetch('/about.html')
+                .then(function(r) { return r.text(); })
+                .then(function(html) {
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(function() {
+                    window.location.href = '/about.html';
+                });
+        } else {
+            // Project slug route — show the page
+            document.documentElement.style.visibility = 'visible';
+        }
+    })();
+    </script>
     <title>Case Study - Justin Rodriguez</title>
-    <link rel="stylesheet" href="css/styles.css?v=32">
+    <link rel="stylesheet" href="/css/styles.css?v=32">
 </head>
 <body>
     <!-- Header/Navigation -->
     <header class="header">
         <div class="header-content">
             <a href="/" class="logo">
-                <img src="images/logos/jcoursework-logo.png" alt="JCoursework Logo" class="logo-img">
+                <img src="/images/logos/jcoursework-logo.png" alt="JCoursework Logo" class="logo-img">
             </a>
             <nav class="nav">
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -104,11 +126,16 @@
                 </form>
             </div>
         </div>
-        <img src="images/logos/jcoursework_logo-reversed.png" alt="JCoursework" class="footer-hero-logo">
+        <img src="/images/logos/jcoursework_logo-reversed.png" alt="JCoursework" class="footer-hero-logo">
         <p class="footer-copyright">All work &copy; Justin Rodriguez, Coursework Creative LLC. All rights reserved.<br>Website designed and vibe coded by Justin Rodriguez built with Claude Code.</p>
     </footer>
 
-    <script src="js/portfolio-data.js?v=4"></script>
-    <script src="js/case-study.js?v=14"></script>
+    <script src="/js/portfolio-data.js?v=5"></script>
+    <script>
+    // Only load case-study.js for project routes (not /info)
+    if (window.__route !== 'info') {
+        document.write('<script src="/js/case-study.js?v=15"><\/script>');
+    }
+    </script>
 </body>
 </html>

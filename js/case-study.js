@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const project = getProjectFromURL();
 
     if (!project) {
-        window.location.href = 'index.html';
+        window.location.href = '/';
         return;
     }
 
@@ -41,12 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // GET PROJECT FROM URL
 // ============================================
 function getProjectFromURL() {
+    // Try slug-based URL first (e.g., /umaga-brand-illustrations)
+    const path = window.location.pathname.replace(/\/$/, '');
+    const slug = path.split('/').pop();
+    if (slug) {
+        const project = portfolioProjects.find(p => p.slug === slug);
+        if (project) return project;
+    }
+
+    // Fallback to query param (e.g., case-study.html?id=2)
     const params = new URLSearchParams(window.location.search);
     const id = parseInt(params.get('id'), 10);
+    if (!isNaN(id)) {
+        return portfolioProjects.find(p => p.id === id) || null;
+    }
 
-    if (isNaN(id)) return null;
-
-    return portfolioProjects.find(p => p.id === id) || null;
+    return null;
 }
 
 // ============================================
@@ -408,7 +418,7 @@ function renderSeeMore(currentProject) {
     nextProjects.forEach(project => {
         const card = document.createElement('a');
         card.className = 'see-more-card scroll-fade';
-        card.href = 'case-study.html?id=' + project.id;
+        card.href = '/' + project.slug;
 
         // Create image container
         const imageDiv = document.createElement('div');
@@ -521,7 +531,7 @@ function initializeBackButton() {
         if (document.referrer && document.referrer.includes(window.location.host)) {
             window.history.back();
         } else {
-            window.location.href = 'index.html';
+            window.location.href = '/';
         }
     });
 }
