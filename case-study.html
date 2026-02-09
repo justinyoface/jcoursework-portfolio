@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study - Justin Rodriguez</title>
+    <link rel="stylesheet" href="css/styles.css?v=32">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logos/jcoursework-logo.png" alt="JCoursework Logo" class="logo-img">
+            </a>
+            <nav class="nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">WORK</a></li>
+                    <li><a href="about.html" class="nav-link">INFO</a></li>
+                    <li><a href="https://shop.jcoursework.com/" target="_blank" class="nav-link">SHOP</a></li>
+                    <li><a href="index.html#blog" class="nav-link">BLOG</a></li>
+                    <li>
+                        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sticky Sub Navigation -->
+    <nav class="case-study-subnav">
+        <div class="case-study-subnav-content">
+            <a href="#" id="backButton" class="back-link">&larr; Back</a>
+        </div>
+    </nav>
+
+    <!-- Case Study Content -->
+    <main class="case-study" id="caseStudy">
+        <h1 class="case-study-title" id="caseStudyTitle"></h1>
+
+        <div class="case-study-tags" id="caseStudyTags"></div>
+
+        <div class="case-study-body" id="caseStudyBody"></div>
+
+        <div class="case-study-gallery" id="caseStudyGallery"></div>
+
+        <section class="see-more" id="seeMore">
+            <h2 class="see-more-title">See more projects</h2>
+            <div class="see-more-grid" id="seeMoreGrid"></div>
+            <div class="see-more-action">
+                <a href="index.html" class="btn-all-projects">View all projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Lightbox -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="gallery-lightbox-close" aria-label="Close">&times;</button>
+        <button class="gallery-lightbox-prev" aria-label="Previous">&lt;</button>
+        <button class="gallery-lightbox-next" aria-label="Next">&gt;</button>
+        <div class="gallery-lightbox-content">
+            <img src="" alt="" class="gallery-lightbox-img" id="galleryLightboxImg">
+            <span class="gallery-lightbox-counter" id="galleryLightboxCounter"></span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4 class="footer-heading">Sitemap</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Work</a></li>
+                    <li><a href="about.html">Info</a></li>
+                    <li><a href="https://shop.jcoursework.com/" target="_blank">Shop</a></li>
+                    <li><a href="https://jcoursework.substack.com/" target="_blank">Blog</a></li>
+                    <li><a href="mailto:hello@jcoursework.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Social</h4>
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://tiktok.com" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@JCOURSEWORK" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/justinrod/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Newsletter</h4>
+                <form class="footer-newsletter" onsubmit="return false;">
+                    <input type="email" placeholder="Email address" class="footer-newsletter-input" aria-label="Email address">
+                    <button type="submit" class="footer-newsletter-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <img src="images/logos/jcoursework_logo-reversed.png" alt="JCoursework" class="footer-hero-logo">
+        <p class="footer-copyright">All work &copy; Justin Rodriguez, Coursework Creative LLC. All rights reserved.</p>
+    </footer>
+
+    <script src="js/portfolio-data.js?v=4"></script>
+    <script src="js/case-study.js?v=14"></script>
+</body>
+</html>

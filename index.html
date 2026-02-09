@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Rodriguez - Art & Design Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css?v=32">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="images/logos/jcoursework-logo.png" alt="JCoursework Logo" class="logo-img">
+            </a>
+            <nav class="nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">WORK</a></li>
+                    <li><a href="about.html" class="nav-link">INFO</a></li>
+                    <li><a href="https://shop.jcoursework.com/" target="_blank" class="nav-link">SHOP</a></li>
+                    <li><a href="https://jcoursework.substack.com/" target="_blank" class="nav-link">BLOG</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/jcoursework" target="_blank" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/logos/jcoursework-logo-hero.png" alt="JCoursework" class="hero-logo">
+            <h1 class="hero-title">ART & DESIGN WORK BY JUSTIN RODRIGUEZ</h1>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="design">DESIGN</button>
+            <button class="filter-btn" data-filter="illustration">ILLUSTRATION</button>
+            <button class="filter-btn" data-filter="motion">MOTION</button>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio">
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Portfolio items will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4 class="footer-heading">Sitemap</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Work</a></li>
+                    <li><a href="about.html">Info</a></li>
+                    <li><a href="https://shop.jcoursework.com/" target="_blank">Shop</a></li>
+                    <li><a href="https://jcoursework.substack.com/" target="_blank">Blog</a></li>
+                    <li><a href="mailto:hello@jcoursework.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Social</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/jcoursework" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@JCOURSEWORK" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/justinrod/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Newsletter</h4>
+                <form class="footer-newsletter" onsubmit="return false;">
+                    <input type="email" placeholder="Email address" class="footer-newsletter-input" aria-label="Email address">
+                    <button type="submit" class="footer-newsletter-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <img src="images/logos/jcoursework_logo-reversed.png" alt="JCoursework" class="footer-hero-logo">
+        <p class="footer-copyright">All work &copy; Justin Rodriguez, Coursework Creative LLC. All rights reserved.<br>Website designed and vibe coded by Justin Rodriguez built with Claude Code.</p>
+    </footer>
+
+    <script src="js/portfolio-data.js?v=4"></script>
+    <script src="js/main.js?v=16"></script>
+</body>
+</html>
