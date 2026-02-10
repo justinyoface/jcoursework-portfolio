@@ -235,7 +235,7 @@ const portfolioProjects = [
         id: 14,
         title: "Hebru Brand Fat Tiger Flyer",
         slug: "hebru-brand-fat-tiger-flyer",
-        folder: "Project-14_Hebru-Brand-FatTiger-Flyer",
+        folder: "project-14_Hebru-Brand-FatTiger-Flyer",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
