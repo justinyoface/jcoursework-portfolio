@@ -19,12 +19,20 @@
  * - tags: Array of tags for filtering (array of strings)
  * - description: Short description shown on portfolio grid (string)
  * - body: Longer body copy for the case study page (string)
- * - galleryLayout: Array of numbers defining how many images per row
- *     Example: [1, 2, 1, 3] means:
+ * - galleryLayout: Array defining how many images per row and optional column ratios
+ *     Use a number for equal-width columns, or a ratio string for custom widths:
+ *       - 1        → 1 image (full-width)
+ *       - 2        → 2 images (equal-width columns)
+ *       - 3        → 3 images (equal-width columns)
+ *       - "70:30"  → 2 images (70% / 30% split)
+ *       - "30:70"  → 2 images (30% / 70% split)
+ *       - "60:40"  → 2 images (60% / 40% split)
+ *     Example: [1, "70:30", 2, "30:70"] means:
  *       - Row 1: 1 image (full-width)
- *       - Row 2: 2 images (2 columns)
- *       - Row 3: 1 image (full-width)
- *       - Row 4: 3 images (3 columns)
+ *       - Row 2: 2 images (70/30 split)
+ *       - Row 3: 2 images (equal-width)
+ *       - Row 4: 2 images (30/70 split)
+ *     On mobile, all rows stack to single-column regardless of ratio.
  *     Images are automatically numbered: project-XX_img-1, project-XX_img-2, etc.
  *     The first image (img-1) is always the thumbnail and hero image
  *
@@ -46,7 +54,10 @@ function generateGallery(projectNumber, folder, galleryLayout, formats) {
     const singleFormat = typeof formats === 'string' ? formats : 'jpg';
     const autoDetect = formats === 'auto';
 
-    galleryLayout.forEach(imagesInRow => {
+    galleryLayout.forEach(entry => {
+        // Determine image count: number = count, string ratio "70:30" = number of parts
+        const imagesInRow = typeof entry === 'string' ? entry.split(':').length : entry;
+
         const row = [];
         for (let i = 0; i < imagesInRow; i++) {
             if (autoDetect) {
@@ -65,6 +76,16 @@ function generateGallery(projectNumber, folder, galleryLayout, formats) {
     });
 
     return gallery;
+}
+
+// Parse a galleryLayout entry into a CSS grid-template-columns value
+function getGridColumns(entry) {
+    if (typeof entry === 'string') {
+        // Ratio string like "70:30" → "70fr 30fr"
+        return entry.split(':').map(function(n) { return n.trim() + 'fr'; }).join(' ');
+    }
+    // Number like 2 → "repeat(2, 1fr)"
+    return 'repeat(' + entry + ', 1fr)';
 }
 
 // ============================================
@@ -299,8 +320,19 @@ OPTION B - Mixed Formats (different format per image):
 GALLERY LAYOUT GUIDE:
 The galleryLayout array defines how many images appear in each row:
 - [1] = 1 row with 1 image (full-width)
-- [1, 2] = Row 1: 1 image, Row 2: 2 images
+- [1, 2] = Row 1: 1 image, Row 2: 2 equal-width images
 - [1, 2, 1, 3] = Row 1: 1 image, Row 2: 2 images, Row 3: 1 image, Row 4: 3 images
+
+CUSTOM COLUMN RATIOS:
+Use a ratio string instead of a number to control column widths:
+- [1, "70:30"] = Row 1: full-width, Row 2: 70%/30% split
+- [1, "30:70", "60:40"] = Row 1: full-width, Row 2: 30%/70%, Row 3: 60%/40%
+- ["80:20", 2] = Row 1: 80%/20% split, Row 2: 2 equal-width images
+
+Available ratios: "50:50", "60:40", "40:60", "70:30", "30:70", "80:20", "20:80"
+(or any custom numbers — they're used as fr units)
+
+On mobile (< 768px), all rows stack to single-column automatically.
 
 Maximum 6 images per row.
 

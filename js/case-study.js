@@ -81,6 +81,7 @@ function renderCaseStudy(project) {
 function renderGallery(project) {
     const galleryContainer = document.getElementById('caseStudyGallery');
     const rows = project.gallery || [[project.image]];
+    const layout = project.galleryLayout || [];
 
     // Build flat source list for lightbox
     // First row's first image always uses project thumbnail
@@ -90,7 +91,11 @@ function renderGallery(project) {
     rows.forEach((row, rowIndex) => {
         const rowEl = document.createElement('div');
         rowEl.className = 'gallery-row scroll-fade';
-        rowEl.style.gridTemplateColumns = 'repeat(' + row.length + ', 1fr)';
+        // Use ratio from galleryLayout if available, otherwise equal columns
+        const layoutEntry = layout[rowIndex];
+        rowEl.style.gridTemplateColumns = (layoutEntry && typeof getGridColumns === 'function')
+            ? getGridColumns(layoutEntry)
+            : 'repeat(' + row.length + ', 1fr)';
 
         row.forEach((src, colIndex) => {
             const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : src;
