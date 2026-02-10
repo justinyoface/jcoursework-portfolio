@@ -71,16 +71,25 @@ function generateGallery(projectNumber, folder, galleryLayout, formats) {
 // HELPER FUNCTION: Auto-detect Image Format
 // ============================================
 function getImageWithFormat(basePath, callback) {
+    const suffixes = ['_h', '_v', '_sq', ''];
     const formats = ['jpg', 'png', 'gif'];
+    const combinations = [];
+
+    suffixes.forEach(function(suffix) {
+        formats.forEach(function(format) {
+            combinations.push(basePath + suffix + '.' + format);
+        });
+    });
+
     let currentIndex = 0;
 
     function tryNext() {
-        if (currentIndex >= formats.length) {
+        if (currentIndex >= combinations.length) {
             callback(basePath + '.jpg'); // Fallback to jpg if none found
             return;
         }
 
-        const testPath = basePath + '.' + formats[currentIndex];
+        const testPath = combinations[currentIndex];
         const img = new Image();
 
         img.onload = function() {
@@ -104,7 +113,6 @@ const portfolioProjects = [
         title: "CoursePeace",
         slug: "coursepeace",
         folder: "project-01_coursepeace",
-        imageFormat: "gif",  // Specify file format: 'jpg', 'png', or 'gif' (default: 'jpg')
         tags: ["illustration"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
@@ -135,7 +143,6 @@ const portfolioProjects = [
         title: "Artwork Wear Animation",
         slug: "artwork-wear-animation",
         folder: "project-04_artwork-wear-animation",
-        imageFormat: "gif",  // GIF format for animated posters
         tags: ["motion", "illustration"],
         description: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
         body: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
@@ -153,13 +160,13 @@ const portfolioProjects = [
     },
     {
         id: 6,
-        title: "Hebru Brand NYC Flyer",
-        slug: "hebru-brand-nyc-flyer",
-        folder: "project-06_hebru-brand-nyc-flyer",
+        title: "Hebru Brand Studios",
+        slug: "hebru-brand-studios",
+        folder: "project-06_hebru-brand-studios",
         tags: ["motion", "illustration"],
-        description: "A 2D animated explainer video breaking down complex concepts into simple, engaging visual narratives for an educational platform.",
-        body: "A 2D animated explainer video breaking down complex concepts into simple, engaging visual narratives for an educational platform.",
-        galleryLayout: [1]  // Total: 1 image
+        description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
+        body: "I had the opportunity to intern with artist Hebru Brantley’s brand  Hebru Brand Studios as a designer and worked on various apparel designs and marketing materials that led up to their pop up shop in NYC. An unforgettable experience..",
+        galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
     },
     {
         id: 7,
@@ -173,74 +180,44 @@ const portfolioProjects = [
     },
     {
         id: 8,
-        title: "Hebru Brand Fly Boy Pizza Tee",
-        slug: "hebru-brand-fly-boy-pizza-tee",
-        folder: "project-08_hebru-brand-fly-boy-pizza-tee",
-        tags: ["illustration"],
-        description: "A series of editorial illustrations for a lifestyle magazine, exploring contemporary themes through a unique visual style.",
-        body: "A series of editorial illustrations for a lifestyle magazine, exploring contemporary themes through a unique visual style.",
-        galleryLayout: [1]  // Total: 1 image
-    },
-    {
-        id: 9,
-        title: "Hebru Brand Rocket Flyer",
-        slug: "hebru-brand-rocket-flyer",
-        folder: "project-09_hebru-brand-rocket-flyer",
-        tags: ["illustration"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        galleryLayout: [1]  // Total: 1 image
-    },
-    {
-        id: 10,
         title: "SPC Packaging Design",
         slug: "spc-packaging-design",
-        folder: "project-10_SPC-packaging-design",
+        folder: "project-08_SPC-packaging-design",
         tags: ["design", "illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
-        id: 11,
+        id: 9,
         title: "This Is What Asian Looks Like",
         slug: "this-is-what-asian-looks-like",
-        folder: "project-11_This-Is-What-Asian-Looks-Like",
+        folder: "project-09_This-Is-What-Asian-Looks-Like",
         tags: ["design"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
-        id: 12,
+        id: 10,
         title: "SPC x Nine Bar T-Shirt",
         slug: "spc-x-nine-bar-t-shirt",
-        folder: "project-12_SPCxNine-Bar-T-Shirt",
+        folder: "project-10_SPCxNine-Bar-T-Shirt",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
-        id: 13,
+        id: 11,
         title: "Coursework King Marie Tee",
         slug: "coursework-king-marie-tee",
-        folder: "project-13_Coursework-King-Marie-Tee",
+        folder: "project-11_Coursework-King-Marie-Tee",
         tags: ["illustration"],
         description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
         galleryLayout: [1]  // Total: 1 image
     },
-    {
-        id: 14,
-        title: "Hebru Brand Fat Tiger Flyer",
-        slug: "hebru-brand-fat-tiger-flyer",
-        folder: "project-14_Hebru-Brand-FatTiger-Flyer",
-        tags: ["illustration"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        galleryLayout: [1]  // Total: 1 image
-    }
 ];
 
 // ============================================
