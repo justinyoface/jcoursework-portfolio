@@ -187,7 +187,7 @@ const portfolioProjects = [
         tags: ["motion", "illustration"],
         description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
         body: "I had the opportunity to intern with artist Hebru Brantley’s brand  Hebru Brand Studios as a designer and worked on various apparel designs and marketing materials that led up to their pop up shop in NYC. An unforgettable experience..",
-        galleryLayout: ["70:30", "30:70", "70:30", 2, 2, "30:70"]  // Total: 12 images
+        galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
     },
     {
         id: 7,

@@ -84,18 +84,29 @@ function renderGallery(project) {
     const layout = project.galleryLayout || [];
 
     // Build flat source list for lightbox
-    // First row's first image always uses project thumbnail
     galleryImageSources = [];
     let flatIndex = 0;
 
     rows.forEach((row, rowIndex) => {
         const rowEl = document.createElement('div');
         rowEl.className = 'gallery-row scroll-fade';
-        // Use ratio from galleryLayout if available, otherwise equal columns
+
         const layoutEntry = layout[rowIndex];
-        rowEl.style.gridTemplateColumns = (layoutEntry && typeof getGridColumns === 'function')
-            ? getGridColumns(layoutEntry)
-            : 'repeat(' + row.length + ', 1fr)';
+        const isManualRatio = typeof layoutEntry === 'string';
+        const isAutoCompute = typeof layoutEntry === 'number' && layoutEntry > 1;
+
+        // Set initial grid columns
+        if (isManualRatio) {
+            rowEl.style.gridTemplateColumns = (typeof getGridColumns === 'function')
+                ? getGridColumns(layoutEntry)
+                : 'repeat(' + row.length + ', 1fr)';
+            rowEl.classList.add('gallery-row--manual');
+        } else {
+            rowEl.style.gridTemplateColumns = 'repeat(' + row.length + ', 1fr)';
+        }
+
+        // Track images in this row for aspect-ratio computation
+        const rowImages = [];
 
         row.forEach((src, colIndex) => {
             const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : src;
@@ -114,6 +125,11 @@ function renderGallery(project) {
             const idx = flatIndex;
             wrapper.addEventListener('click', () => openLightbox(idx));
 
+            // Fade-in: add .is-loaded when image finishes loading
+            function onImageLoad() {
+                imgEl.classList.add('is-loaded');
+            }
+
             if (!hasExtension && typeof getImageWithFormat === 'function') {
                 // Auto-detect format
                 getImageWithFormat(imageSrc, function(resolvedPath) {
@@ -125,12 +141,65 @@ function renderGallery(project) {
                 imgEl.src = imageSrc;
             }
 
+            // Attach load listener for fade-in
+            if (imgEl.complete && imgEl.naturalWidth > 0) {
+                onImageLoad();
+            } else {
+                imgEl.addEventListener('load', onImageLoad);
+            }
+
+            rowImages.push(imgEl);
             wrapper.appendChild(imgEl);
             rowEl.appendChild(wrapper);
             flatIndex++;
         });
 
         galleryContainer.appendChild(rowEl);
+
+        // For auto-compute rows (number entries > 1), recompute columns
+        // from actual image aspect ratios once all images have loaded
+        if (isAutoCompute && rowImages.length > 1) {
+            waitForImages(rowImages, function() {
+                var aspectRatios = rowImages.map(function(img) {
+                    if (img.naturalWidth > 0 && img.naturalHeight > 0) {
+                        return img.naturalWidth / img.naturalHeight;
+                    }
+                    return 1; // fallback to square
+                });
+                var columns = aspectRatios.map(function(ar) {
+                    return ar.toFixed(4) + 'fr';
+                }).join(' ');
+                rowEl.style.gridTemplateColumns = columns;
+            });
+        }
+    });
+}
+
+/**
+ * Wait for all images to finish loading, then call the callback.
+ * Handles already-cached images (img.complete === true).
+ */
+function waitForImages(images, callback) {
+    var remaining = images.length;
+    if (remaining === 0) {
+        callback();
+        return;
+    }
+
+    function checkDone() {
+        remaining--;
+        if (remaining <= 0) {
+            callback();
+        }
+    }
+
+    images.forEach(function(img) {
+        if (img.complete && img.naturalWidth > 0) {
+            checkDone();
+        } else {
+            img.addEventListener('load', checkDone);
+            img.addEventListener('error', checkDone);
+        }
     });
 }
 
