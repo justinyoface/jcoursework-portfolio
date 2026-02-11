@@ -161,17 +161,44 @@ img, .portfolio-item img, .card img, .thumbnail img{
     --max-width: 1800px;
 
     /* Typography */
-    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-primary: "Instrument Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Type Ramp */
+    --text-h1: clamp(3.125rem, 2.857rem + 0.71vw, 3.5rem);       /* 50px → 56px */
+    --text-h2: clamp(2.5rem, 2.143rem + 0.95vw, 3rem);            /* 40px → 48px */
+    --text-h3: clamp(1.875rem, 1.607rem + 0.71vw, 2.25rem);       /* 30px → 36px */
+    --text-h4: 1.5rem;                                              /* 24px */
+    --text-body: 1rem;                                               /* 16px */
+
+    --lh-h1: 1.21;   /* 68/56 */
+    --lh-h2: 1.25;   /* 60/48 */
+    --lh-h3: 1.28;   /* 46/36 */
+    --lh-h4: 1.42;   /* 34/24 */
+    --lh-body: 1.5;   /* 24/16 */
 
     /* Transitions */
     --transition-speed: 0.3s;
 }
 
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+}
+
+h1 { font-size: var(--text-h1); line-height: var(--lh-h1); }
+h2 { font-size: var(--text-h2); line-height: var(--lh-h2); }
+h3 { font-size: var(--text-h3); line-height: var(--lh-h3); }
+h4 { font-size: var(--text-h4); line-height: var(--lh-h4); }
+
 body {
     font-family: var(--font-primary);
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
     color: var(--color-text);
     background-color: var(--color-background);
-    line-height: 1.6;
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -568,10 +595,10 @@ img {
 }
 
 .case-study-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--text-h1);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: var(--lh-h1);
     margin-bottom: var(--spacing-md);
 }
 
@@ -592,8 +619,8 @@ img {
 }
 
 .case-study-body {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
     max-width: 800px;
     margin-bottom: var(--spacing-xl);
     color: var(--color-text);
@@ -745,7 +772,7 @@ img {
 }
 
 .see-more-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--text-h2);
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: var(--spacing-lg);
@@ -820,10 +847,10 @@ img {
    ABOUT PAGE
    =================================== */
 .about-hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: var(--text-h1);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: var(--lh-h1);
     margin-bottom: var(--spacing-lg);
 }
 
@@ -901,7 +928,7 @@ img {
 }
 
 .about-contact-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--text-h2);
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: var(--spacing-lg);
@@ -1246,10 +1273,6 @@ img {
         padding: 0;
         margin-left: 0;
         margin-right: 0;
-    }
-
-    .case-study-title {
-        font-size: 1.8rem;
     }
 
     .about-bio-content {
