@@ -1258,7 +1258,7 @@ img {
     }
 
     .see-more-card {
-        flex: 0 0 375px;
+        flex: 0 0 75vw;
         scroll-snap-align: start;
     }
 
