@@ -1262,6 +1262,11 @@ img {
         scroll-snap-align: start;
     }
 
+    .see-more-card.scroll-fade {
+        opacity: 1;
+        transform: none;
+    }
+
     .see-more-card-title {
         font-size: 1.1rem;
         font-weight: 700;
