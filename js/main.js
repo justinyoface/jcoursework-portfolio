@@ -236,9 +236,14 @@ function initializeFilters() {
     }
 
     function closeFilters() {
+        // Set explicit height so CSS can transition from it
+        filterSection.style.height = filterSection.offsetHeight + 'px';
+        // Force reflow before adding closing class
+        filterSection.offsetHeight;
         filterSection.classList.add('filters-closing');
         setTimeout(function() {
             filterSection.classList.remove('filters-open', 'filters-closing');
+            filterSection.style.height = '';
             updateFilterIcon();
         }, 350);
     }

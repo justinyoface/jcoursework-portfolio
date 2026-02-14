@@ -1280,6 +1280,23 @@ img {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .filter-section.filters-closing {
+        overflow: hidden;
+        transition: height 0.35s ease;
+        height: 69.5px;
+    }
+
+    .filter-section.filters-closing .filter-toggle {
+        position: static;
+        order: -1;
+    }
+
+    .filter-section.filters-closing .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 767px) {
