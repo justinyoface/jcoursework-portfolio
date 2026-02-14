@@ -225,9 +225,20 @@ function initializeFilters() {
     const filterToggleText = document.querySelector('.filter-toggle-text');
 
     // Toggle filter buttons visibility
+    const filterIcon = filterToggle ? filterToggle.querySelector('.filter-toggle-icon') : null;
+    const iconOpen = 'images/icons/remove_24dp_1F1F1F_FILL0_wght200.svg';
+    const iconClosed = 'images/icons/filter_list_24dp_1F1F1F_FILL0_wght200.svg';
+
+    function updateFilterIcon() {
+        if (filterIcon) {
+            filterIcon.src = filterSection.classList.contains('filters-open') ? iconOpen : iconClosed;
+        }
+    }
+
     if (filterToggle) {
         filterToggle.addEventListener('click', function() {
             filterSection.classList.toggle('filters-open');
+            updateFilterIcon();
         });
     }
 
@@ -247,6 +258,7 @@ function initializeFilters() {
 
             // Collapse filter container
             filterSection.classList.remove('filters-open');
+            updateFilterIcon();
 
             // Apply filter
             currentFilter = filter;
