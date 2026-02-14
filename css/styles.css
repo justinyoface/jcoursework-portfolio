@@ -1213,31 +1213,33 @@ img {
 }
 
 @media (max-width: 767px) {
-    .filter-toggle {
-        margin-left: 0;
+    .filter-section {
+        border-top: 1px solid var(--color-border);
         justify-content: center;
     }
 
+    .filter-toggle {
+        margin-left: 0;
+    }
+
     .filter-section.filters-open {
+        height: auto;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 16px;
     }
 
     .filter-section.filters-open .filter-toggle {
         position: static;
-        margin-bottom: var(--spacing-sm);
+        margin-top: 16px;
+        margin-bottom: 36px;
+        height: auto;
     }
 
     .filter-section.filters-open .filter-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        width: 100%;
-        max-width: 360px;
-    }
-
-    .filter-btn {
-        width: 100%;
     }
 
     .header.menu-open {
