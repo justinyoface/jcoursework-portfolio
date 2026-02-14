@@ -1319,10 +1319,14 @@ img {
         overflow: hidden;
         transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         height: 69.5px;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10.75px;
     }
 
     .filter-section.filters-closing .filter-toggle {
         position: static;
+        margin-bottom: 24px;
         order: -1;
     }
 
