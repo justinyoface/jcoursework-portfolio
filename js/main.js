@@ -220,7 +220,16 @@ function findThumbnailWithAspect(basePath, callback, fallbackImage) {
 // ============================================
 function initializeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const filterLabel = document.querySelector('.filter-label');
+    const filterSection = document.querySelector('.filter-section');
+    const filterToggle = document.querySelector('.filter-toggle');
+    const filterToggleText = document.querySelector('.filter-toggle-text');
+
+    // Toggle filter buttons visibility
+    if (filterToggle) {
+        filterToggle.addEventListener('click', function() {
+            filterSection.classList.toggle('filters-open');
+        });
+    }
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -230,10 +239,10 @@ function initializeFilters() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            // Update filter label
-            if (filterLabel) {
+            // Update toggle label text
+            if (filterToggleText) {
                 const name = this.textContent.charAt(0) + this.textContent.slice(1).toLowerCase();
-                filterLabel.innerHTML = '&mdash;&nbsp; Filter: ' + name;
+                filterToggleText.textContent = 'Filter: ' + name;
             }
 
             // Apply filter
