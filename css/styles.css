@@ -463,6 +463,12 @@ img {
 .filter-section.filters-open {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.filter-section.filters-open .filter-toggle {
+    position: absolute;
+    right: var(--grid-gutter-mobile);
 }
 
 .filter-toggle:hover {
@@ -1162,6 +1168,10 @@ img {
         padding: var(--spacing-sm) var(--grid-gutter-desktop);
     }
 
+    .filter-section.filters-open .filter-toggle {
+        right: var(--grid-gutter-desktop);
+    }
+
     .portfolio {
         padding: calc(var(--spacing-xl) / 2) calc(var(--grid-gutter-desktop) / 2);
     }
@@ -1213,6 +1223,7 @@ img {
     }
 
     .filter-section.filters-open .filter-toggle {
+        position: static;
         margin-bottom: var(--spacing-sm);
     }
 
