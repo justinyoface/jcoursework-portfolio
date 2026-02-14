@@ -1226,14 +1226,13 @@ img {
         height: auto;
         flex-direction: column;
         align-items: center;
+        padding-top: 10.75px;
         padding-bottom: 16px;
     }
 
     .filter-section.filters-open .filter-toggle {
         position: static;
-        margin-top: 16px;
         margin-bottom: 36px;
-        height: auto;
         order: -1;
     }
 
