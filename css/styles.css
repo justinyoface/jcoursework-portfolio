@@ -1212,7 +1212,7 @@ img {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .filter-section {
         border-top: 1px solid var(--color-border);
         justify-content: center;
@@ -1241,7 +1241,9 @@ img {
         flex-wrap: wrap;
         justify-content: center;
     }
+}
 
+@media (max-width: 767px) {
     .header.menu-open {
         background-color: var(--color-background);
     }
