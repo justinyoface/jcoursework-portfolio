@@ -451,11 +451,16 @@ img {
     padding: 0;
     cursor: pointer;
     font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 500;
     letter-spacing: 0.05em;
     white-space: nowrap;
-    color: var(--color-primary);
+    color: var(--color-text);
+    transition: color var(--transition-speed);
+}
+
+.filter-toggle:hover {
+    color: var(--color-hover);
 }
 
 .filter-toggle-icon {
