@@ -516,8 +516,42 @@ img {
 }
 
 .filter-toggle-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     width: 24px;
     height: 24px;
+}
+
+.filter-icon-line {
+    display: block;
+    height: 1.5px;
+    background-color: currentColor;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.filter-icon-line--top {
+    width: 100%;
+}
+
+.filter-icon-line--mid {
+    width: 65%;
+}
+
+.filter-icon-line--bot {
+    width: 35%;
+}
+
+.filter-section.filters-open .filter-icon-line--top,
+.filter-section.filters-open .filter-icon-line--bot {
+    width: 65%;
+    opacity: 0;
+}
+
+.filter-section.filters-open .filter-icon-line--mid {
+    width: 65%;
 }
 
 /* ===================================
