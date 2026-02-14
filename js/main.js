@@ -235,10 +235,23 @@ function initializeFilters() {
         }
     }
 
+    function closeFilters() {
+        filterSection.classList.add('filters-closing');
+        setTimeout(function() {
+            filterSection.classList.remove('filters-open', 'filters-closing');
+            updateFilterIcon();
+        }, 200);
+    }
+
     if (filterToggle) {
         filterToggle.addEventListener('click', function() {
-            filterSection.classList.toggle('filters-open');
-            updateFilterIcon();
+            if (filterSection.classList.contains('filters-open')) {
+                closeFilters();
+            } else {
+                filterSection.classList.remove('filters-closing');
+                filterSection.classList.add('filters-open');
+                updateFilterIcon();
+            }
         });
     }
 
@@ -257,8 +270,7 @@ function initializeFilters() {
             }
 
             // Collapse filter container
-            filterSection.classList.remove('filters-open');
-            updateFilterIcon();
+            closeFilters();
 
             // Apply filter
             currentFilter = filter;

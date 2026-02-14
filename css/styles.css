@@ -438,6 +438,23 @@ img {
     opacity: 0;
 }
 
+@keyframes filterTagOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.filter-section.filters-closing .filter-container {
+    display: flex;
+}
+
+.filter-section.filters-closing .filter-btn {
+    animation: filterTagOut 0.2s ease forwards;
+}
+
 .filter-section.filters-open .filter-btn:nth-child(1) { animation-delay: 0s; }
 .filter-section.filters-open .filter-btn:nth-child(2) { animation-delay: 0.05s; }
 .filter-section.filters-open .filter-btn:nth-child(3) { animation-delay: 0.1s; }
