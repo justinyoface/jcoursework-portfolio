@@ -383,7 +383,10 @@ img {
    FILTER SECTION
    =================================== */
 .filter-section {
-    padding: var(--spacing-sm) var(--grid-gutter-mobile);
+    padding: 0 var(--grid-gutter-mobile);
+    height: 69.5px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid var(--color-border);
     background-color: rgba(242, 242, 235, 0.95);
     backdrop-filter: blur(10px);
@@ -461,8 +464,6 @@ img {
 }
 
 .filter-section.filters-open {
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -1161,11 +1162,11 @@ img {
     }
 
     .filter-section {
-        padding: var(--spacing-sm) var(--grid-gutter-desktop);
+        padding: 0 var(--grid-gutter-desktop);
     }
 
     .filter-section--fixed {
-        padding: var(--spacing-sm) var(--grid-gutter-desktop);
+        padding: 0 var(--grid-gutter-desktop);
     }
 
     .filter-section.filters-open .filter-toggle {
