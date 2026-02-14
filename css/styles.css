@@ -457,6 +457,12 @@ img {
     white-space: nowrap;
     color: var(--color-text);
     transition: color var(--transition-speed);
+    height: 48px;
+}
+
+.filter-section.filters-open {
+    display: flex;
+    align-items: center;
 }
 
 .filter-toggle:hover {
@@ -1154,10 +1160,6 @@ img {
 
     .filter-section--fixed {
         padding: var(--spacing-sm) var(--grid-gutter-desktop);
-    }
-
-    .filter-section.filters-open .filter-container {
-        padding-top: var(--spacing-sm);
     }
 
     .portfolio {
