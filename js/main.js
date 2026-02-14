@@ -245,7 +245,7 @@ function initializeFilters() {
             filterSection.classList.remove('filters-open', 'filters-closing');
             filterSection.style.height = '';
             updateFilterIcon();
-        }, 350);
+        }, 500);
     }
 
     if (filterToggle) {
