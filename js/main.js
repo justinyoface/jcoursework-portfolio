@@ -220,6 +220,7 @@ function findThumbnailWithAspect(basePath, callback, fallbackImage) {
 // ============================================
 function initializeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterLabel = document.querySelector('.filter-label');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -228,6 +229,12 @@ function initializeFilters() {
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
+
+            // Update filter label
+            if (filterLabel) {
+                const name = this.textContent.charAt(0) + this.textContent.slice(1).toLowerCase();
+                filterLabel.innerHTML = '&mdash;&nbsp; Filter: ' + name;
+            }
 
             // Apply filter
             currentFilter = filter;

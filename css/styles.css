@@ -389,6 +389,8 @@ img {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 100;
+    display: flex;
+    align-items: center;
 }
 
 .filter-section--fixed {
@@ -434,6 +436,15 @@ img {
 .filter-btn.active {
     background-color: var(--color-primary);
     color: var(--color-secondary);
+}
+
+.filter-label {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    color: var(--color-primary);
 }
 
 /* ===================================
@@ -1164,6 +1175,28 @@ img {
 }
 
 @media (max-width: 767px) {
+    .filter-section {
+        flex-direction: column;
+    }
+
+    .filter-label {
+        margin-left: 0;
+        margin-bottom: var(--spacing-sm);
+        order: -1;
+    }
+
+    .filter-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
     .header.menu-open {
         background-color: var(--color-background);
     }
