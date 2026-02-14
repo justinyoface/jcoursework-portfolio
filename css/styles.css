@@ -1232,7 +1232,7 @@ img {
 
     .filter-section.filters-open .filter-toggle {
         position: static;
-        margin-bottom: 36px;
+        margin-bottom: 24px;
         order: -1;
     }
 
