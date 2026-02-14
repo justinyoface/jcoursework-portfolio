@@ -245,6 +245,9 @@ function initializeFilters() {
                 filterToggleText.textContent = 'Filter: ' + name;
             }
 
+            // Collapse filter container
+            filterSection.classList.remove('filters-open');
+
             // Apply filter
             currentFilter = filter;
             applyFilter(filter);
