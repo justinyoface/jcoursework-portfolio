@@ -452,7 +452,8 @@ img {
 }
 
 .filter-section.filters-closing .filter-btn {
-    animation: filterTagOut 0.2s ease forwards;
+    animation: filterTagOut 0.35s ease forwards;
+    animation-delay: 0s !important;
 }
 
 .filter-section.filters-open .filter-btn:nth-child(1) { animation-delay: 0s; }

@@ -240,7 +240,7 @@ function initializeFilters() {
         setTimeout(function() {
             filterSection.classList.remove('filters-open', 'filters-closing');
             updateFilterIcon();
-        }, 200);
+        }, 350);
     }
 
     if (filterToggle) {
