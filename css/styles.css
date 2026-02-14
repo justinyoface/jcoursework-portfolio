@@ -1138,6 +1138,10 @@ img {
         padding: var(--spacing-xl) var(--grid-gutter-desktop);
     }
 
+    .about-hero-title {
+        font-size: 40px;
+    }
+
     .about-product {
         padding: var(--spacing-xl) var(--grid-gutter-desktop);
     }
