@@ -282,15 +282,16 @@ function openLightbox(index) {
     panY = 0;
 
     // Reset image transform to centered position
-    lightboxImg.style.transform = 'translate(-50%, -50%)';
-    lightboxImg.style.transition = '';
+    lightboxImg.style.transition = 'none';
+    lightboxImg.style.transform = 'translate(-50%, -50%) scale(1.1)';
+    lightboxImg.style.opacity = '0';
 
     // Set image source
     lightboxImg.src = galleryImageSources[index];
     lightboxImg.alt = 'Gallery image ' + (index + 1);
-    counter.textContent = (index + 1) + ' / ' + galleryImageSources.length;
+    updateCounter(index + 1, galleryImageSources.length, false);
 
-    // Show lightbox with PhotoSwipe-style fade-in
+    // Show lightbox with fade-in
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
 
@@ -301,8 +302,11 @@ function openLightbox(index) {
     // Force reflow
     lightbox.offsetHeight;
 
-    // Fade in
+    // Fade in overlay and scale down image
     lightbox.style.opacity = '1';
+    lightboxImg.style.transition = 'transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease';
+    lightboxImg.style.transform = 'translate(-50%, -50%) scale(1)';
+    lightboxImg.style.opacity = '1';
 
     // Show/hide navigation based on image count
     if (galleryImageSources.length === 1) {
@@ -459,27 +463,76 @@ function handleSwipe() {
     }
 }
 
+function updateCounter(current, total, animate) {
+    const counter = document.getElementById('galleryLightboxCounter');
+    var currentStr = String(current).padStart(2, '0');
+    var totalStr = String(total).padStart(2, '0');
+
+    if (!animate) {
+        // Initial load — set up structure
+        counter.innerHTML = '<span class="counter-roller"><span>' + currentStr + '</span></span> / ' + totalStr;
+        return;
+    }
+
+    var roller = counter.querySelector('.counter-roller');
+    var oldSpan = roller.querySelector('span');
+    var newSpan = document.createElement('span');
+    newSpan.textContent = currentStr;
+
+    // Position new span below, no transition yet
+    newSpan.style.transition = 'none';
+    newSpan.style.transform = 'translateY(100%)';
+    roller.appendChild(newSpan);
+
+    // Force reflow
+    newSpan.offsetHeight;
+
+    // Animate both: old slides up and out, new slides up into place
+    newSpan.style.transition = '';
+    newSpan.style.transform = 'translateY(0)';
+    if (oldSpan) {
+        oldSpan.style.transform = 'translateY(-100%)';
+    }
+
+    // Clean up old span after transition
+    newSpan.addEventListener('transitionend', function handler() {
+        if (oldSpan && oldSpan.parentNode) {
+            oldSpan.remove();
+        }
+        newSpan.removeEventListener('transitionend', handler);
+    });
+}
+
 function updateLightboxImage() {
     const img = document.getElementById('galleryLightboxImg');
-    const counter = document.getElementById('galleryLightboxCounter');
 
-    // PhotoSwipe-style fade transition
-    img.style.transition = 'opacity 333ms cubic-bezier(0.4, 0, 0.22, 1)';
+    // Rolodex counter transition (trigger immediately)
+    updateCounter(currentLightboxIndex + 1, galleryImageSources.length, true);
+
+    // Fade out current image
+    img.style.transition = 'opacity 200ms ease';
     img.style.opacity = '0';
 
     setTimeout(() => {
         img.src = galleryImageSources[currentLightboxIndex];
         img.alt = 'Gallery image ' + (currentLightboxIndex + 1);
-        counter.textContent = (currentLightboxIndex + 1) + ' / ' + galleryImageSources.length;
 
         // Reset zoom state
         isZoomed = false;
-        img.style.transform = 'translate(-50%, -50%)';
         img.style.cursor = 'zoom-in';
 
-        // Fade in
+        // Start scaled up
+        img.style.transition = 'none';
+        img.style.transform = 'translate(-50%, -50%) scale(1.1)';
+
+        // Force reflow
+        img.offsetHeight;
+
+        // Scale down and fade in
+        img.style.transition = 'transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease';
+        img.style.transform = 'translate(-50%, -50%) scale(1)';
         img.style.opacity = '1';
-    }, 333);
+    }, 200);
 }
 
 // ============================================
