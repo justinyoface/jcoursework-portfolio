@@ -145,8 +145,8 @@ const portfolioProjects = [
         slug: "umaga-brand-illustrations",
         folder: "project-02_umaga-brand-illustrations",
         tags: ["illustration"],
-        description: "A series of whimsical character illustrations created for a children's book project, featuring vibrant colors and expressive designs.",
-        body: "A series of whimsical character illustrations created for a children's book project, featuring vibrant colors and expressive designs.",
+        description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
+        body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
         galleryLayout: [2]  // Total: 2 images
     },
     {
@@ -171,12 +171,12 @@ const portfolioProjects = [
     },
     {
         id: 5,
-        title: "Coursework Fruits of Labor",
-        slug: "coursework-fruits-of-labor",
-        folder: "project-05_coursework-fruits-of-labor",
+        title: "Coursework Fresh Produce Only",
+        slug: "coursework-fresh-produce-only",
+        folder: "project-05_coursework-fresh-produce-only",
         tags: ["illustration"],
-        description: "A detailed digital portrait study exploring light, shadow, and color harmony using contemporary illustration techniques.",
-        body: "A detailed digital portrait study exploring light, shadow, and color harmony using contemporary illustration techniques.",
+        description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
+        body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
@@ -186,7 +186,7 @@ const portfolioProjects = [
         folder: "project-06_hebru-brand-studios",
         tags: ["motion", "illustration"],
         description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
-        body: "I had the opportunity to intern with artist Hebru Brantley’s brand  Hebru Brand Studios as a designer and worked on various apparel designs and marketing materials that led up to their pop up shop in NYC. An unforgettable experience..",
+        body: "Various marketing design for social media and events and apparel design for Hebru Brantley's brand Hebru Brand Studios and his NYC pop-up.",
         galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
     },
     {
@@ -195,8 +195,8 @@ const portfolioProjects = [
         slug: "coursework-kid-print",
         folder: "project-07_coursework-kid-print",
         tags: ["illustration"],
-        description: "Product packaging design for an organic coffee brand, featuring minimalist aesthetics and eco-friendly design principles.",
-        body: "Product packaging design for an organic coffee brand, featuring minimalist aesthetics and eco-friendly design principles.",
+        description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
+        body: "A limited edition screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
@@ -205,8 +205,8 @@ const portfolioProjects = [
         slug: "spc-packaging-design",
         folder: "project-08_SPC-packaging-design",
         tags: ["design", "illustration"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
+        description: "Illustrative packaging design for Side Practice Coffee.",
+        body: "Illustrative packaging design for Side Practice Coffee.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
@@ -215,8 +215,8 @@ const portfolioProjects = [
         slug: "this-is-what-asian-looks-like",
         folder: "project-09_This-Is-What-Asian-Looks-Like",
         tags: ["design"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
+        description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+        body: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
@@ -225,8 +225,8 @@ const portfolioProjects = [
         slug: "spc-x-nine-bar-t-shirt",
         folder: "project-10_SPCxNine-Bar-T-Shirt",
         tags: ["illustration"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
+        description: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
+        body: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
         galleryLayout: [1]  // Total: 1 image
     },
     {
@@ -235,8 +235,8 @@ const portfolioProjects = [
         slug: "coursework-king-marie-tee",
         folder: "project-11_Coursework-King-Marie-Tee",
         tags: ["illustration"],
-        description: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
-        body: "Micro-interactions and smooth UI transitions designed to enhance user experience in a mobile application interface.",
+        description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
+        body: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
         galleryLayout: [1]  // Total: 1 image
     },
 ];
