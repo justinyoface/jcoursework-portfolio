@@ -213,13 +213,13 @@ const portfolioProjects = [
     },
     {
         id: 8,
-        title: "SPC Packaging Design",
-        slug: "spc-packaging-design",
-        folder: "project-08_SPC-packaging-design",
+        title: "Moonshot SPC Packaging Design",
+        slug: "moonshot-spc-packaging-design",
+        folder: "project-08_moonshot-spc-packaging-design",
         tags: ["design", "illustration"],
-        description: "Illustrative packaging design for Side Practice Coffee.",
-        body: "Illustrative packaging design for Side Practice Coffee.",
-        galleryLayout: [1]  // Total: 1 image
+        description: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
+        body: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
+        galleryLayout: [2]  // Total: 2 image
     },
     {
         id: 9,
