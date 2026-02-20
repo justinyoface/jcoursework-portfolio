@@ -148,8 +148,8 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        galleryLayout: [2, 2, 2, 2, 1, 2, 2, 2],  // Total: 15 items (14 images + 1 video)
-        videos: { 9: { id: "nH64bVxXOEA", aspect: "3:2" } }
+        galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
+        videos: { 6: { id: "nH64bVxXOEA", aspect: "3:2" } }
     },
     {
         id: 2,
