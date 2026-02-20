@@ -19,6 +19,10 @@
  * - tags: Array of tags for filtering (array of strings)
  * - description: Short description shown on portfolio grid (string)
  * - body: Longer body copy for the case study page (string)
+ * - videos: (optional) Object mapping slot numbers to YouTube video IDs
+ *     Slots with a video ID render a YouTube embed instead of an image
+ *     Example: videos: { 3: "dQw4w9WgXcQ" }  // Slot 3 is a video
+ *     Videos play inline and are skipped in the lightbox
  * - galleryLayout: Array defining how many images per row and optional column ratios
  *     Use a number for equal-width columns, or a ratio string for custom widths:
  *       - 1        → 1 image (full-width)
@@ -45,7 +49,7 @@
 // ============================================
 // HELPER FUNCTION: Generate Gallery from Layout
 // ============================================
-function generateGallery(projectNumber, folder, galleryLayout, formats) {
+function generateGallery(projectNumber, folder, galleryLayout, formats, videos) {
     const gallery = [];
     let imageCounter = 1;
 
@@ -60,7 +64,10 @@ function generateGallery(projectNumber, folder, galleryLayout, formats) {
 
         const row = [];
         for (let i = 0; i < imagesInRow; i++) {
-            if (autoDetect) {
+            // Check if this slot is a video
+            if (videos && videos[imageCounter]) {
+                row.push({ type: 'video', videoId: videos[imageCounter] });
+            } else if (autoDetect) {
                 // Auto-detect mode: store base path, extension will be resolved at runtime
                 const basePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}`;
                 row.push(basePath);
@@ -137,7 +144,8 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        galleryLayout: [1]  // Total: 1 images
+        galleryLayout: [2, 2, 2, 2, 1, 2, 2, 2],  // Total: 15 items (14 images + 1 video)
+        videos: { 9: "nH64bVxXOEA" }
     },
     {
         id: 2,
@@ -257,7 +265,7 @@ portfolioProjects.forEach(project => {
         project._imageAuto = isAuto; // Flag for runtime detection
 
         // Generate gallery from layout
-        project.gallery = generateGallery(project.id, project.folder, project.galleryLayout, formats);
+        project.gallery = generateGallery(project.id, project.folder, project.galleryLayout, formats, project.videos);
     }
 });
 

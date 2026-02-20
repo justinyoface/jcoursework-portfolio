@@ -109,49 +109,75 @@ function renderGallery(project) {
         const rowImages = [];
 
         row.forEach((src, colIndex) => {
-            const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : src;
-            galleryImageSources.push(imageSrc);
+            const isVideo = typeof src === 'object' && src.type === 'video';
 
-            const wrapper = document.createElement('div');
-            wrapper.className = 'gallery-row-item';
+            if (isVideo) {
+                // Render YouTube video embed
+                const wrapper = document.createElement('div');
+                wrapper.className = 'gallery-row-item gallery-row-item--video';
 
-            const imgEl = document.createElement('img');
-            imgEl.alt = project.title;
-            imgEl.loading = (rowIndex === 0 && colIndex === 0) ? 'eager' : 'lazy';
+                const videoWrapper = document.createElement('div');
+                videoWrapper.className = 'gallery-video-wrapper';
 
-            // Check if path has no extension (auto-detect mode)
-            const hasExtension = /\.(jpg|jpeg|png|gif)$/i.test(imageSrc);
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + src.videoId;
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.loading = 'lazy';
+                iframe.title = project.title + ' video';
 
-            const idx = flatIndex;
-            wrapper.addEventListener('click', () => openLightbox(idx));
-
-            // Fade-in: add .is-loaded when image finishes loading
-            function onImageLoad() {
-                imgEl.classList.add('is-loaded');
-            }
-
-            if (!hasExtension && typeof getImageWithFormat === 'function') {
-                // Auto-detect format
-                getImageWithFormat(imageSrc, function(resolvedPath) {
-                    imgEl.src = resolvedPath;
-                    galleryImageSources[idx] = resolvedPath;
-                });
+                videoWrapper.appendChild(iframe);
+                wrapper.appendChild(videoWrapper);
+                rowEl.appendChild(wrapper);
+                // Videos don't get added to lightbox or rowImages
+                flatIndex++;
             } else {
-                // Use provided path
-                imgEl.src = imageSrc;
-            }
+                // Render image (existing behavior)
+                const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : src;
+                galleryImageSources.push(imageSrc);
 
-            // Attach load listener for fade-in
-            if (imgEl.complete && imgEl.naturalWidth > 0) {
-                onImageLoad();
-            } else {
-                imgEl.addEventListener('load', onImageLoad);
-            }
+                const wrapper = document.createElement('div');
+                wrapper.className = 'gallery-row-item';
 
-            rowImages.push(imgEl);
-            wrapper.appendChild(imgEl);
-            rowEl.appendChild(wrapper);
-            flatIndex++;
+                const imgEl = document.createElement('img');
+                imgEl.alt = project.title;
+                imgEl.loading = (rowIndex === 0 && colIndex === 0) ? 'eager' : 'lazy';
+
+                // Check if path has no extension (auto-detect mode)
+                const hasExtension = /\.(jpg|jpeg|png|gif)$/i.test(imageSrc);
+
+                const idx = galleryImageSources.length - 1;
+                wrapper.addEventListener('click', () => openLightbox(idx));
+
+                // Fade-in: add .is-loaded when image finishes loading
+                function onImageLoad() {
+                    imgEl.classList.add('is-loaded');
+                }
+
+                if (!hasExtension && typeof getImageWithFormat === 'function') {
+                    // Auto-detect format
+                    getImageWithFormat(imageSrc, function(resolvedPath) {
+                        imgEl.src = resolvedPath;
+                        galleryImageSources[idx] = resolvedPath;
+                    });
+                } else {
+                    // Use provided path
+                    imgEl.src = imageSrc;
+                }
+
+                // Attach load listener for fade-in
+                if (imgEl.complete && imgEl.naturalWidth > 0) {
+                    onImageLoad();
+                } else {
+                    imgEl.addEventListener('load', onImageLoad);
+                }
+
+                rowImages.push(imgEl);
+                wrapper.appendChild(imgEl);
+                rowEl.appendChild(wrapper);
+                flatIndex++;
+            }
         });
 
         galleryContainer.appendChild(rowEl);

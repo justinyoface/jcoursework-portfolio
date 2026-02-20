@@ -807,6 +807,28 @@ img {
     transform: scale(1.02);
 }
 
+/* Video embeds in gallery */
+.gallery-row-item--video {
+    cursor: default;
+}
+
+.gallery-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gallery-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
 /* ===================================
    GALLERY LIGHTBOX
    =================================== */
