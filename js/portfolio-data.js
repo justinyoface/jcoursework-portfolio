@@ -203,13 +203,13 @@ const portfolioProjects = [
     },
     {
         id: 7,
-        title: "Coursework Kid Print",
-        slug: "coursework-kid-print",
-        folder: "project-07_coursework-kid-print",
+        title: "Kick Push Kid Print",
+        slug: "kick-push-kid-print",
+        folder: "project-07_kick-push-kid-print",
         tags: ["illustration"],
         description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
         body: "A limited edition screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2, 2, 2]  // Total: 6 image
     },
     {
         id: 8,
