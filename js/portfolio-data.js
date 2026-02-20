@@ -21,7 +21,8 @@
  * - body: Longer body copy for the case study page (string)
  * - videos: (optional) Object mapping slot numbers to YouTube video IDs
  *     Slots with a video ID render a YouTube embed instead of an image
- *     Example: videos: { 3: "dQw4w9WgXcQ" }  // Slot 3 is a video
+ *     Simple:  videos: { 3: "dQw4w9WgXcQ" }  // 16:9 default
+ *     Custom:  videos: { 3: { id: "dQw4w9WgXcQ", aspect: "3:2" } }  // custom aspect ratio
  *     Videos play inline and are skipped in the lightbox
  * - galleryLayout: Array defining how many images per row and optional column ratios
  *     Use a number for equal-width columns, or a ratio string for custom widths:
@@ -66,7 +67,10 @@ function generateGallery(projectNumber, folder, galleryLayout, formats, videos) 
         for (let i = 0; i < imagesInRow; i++) {
             // Check if this slot is a video
             if (videos && videos[imageCounter]) {
-                row.push({ type: 'video', videoId: videos[imageCounter] });
+                const entry = videos[imageCounter];
+                const videoId = typeof entry === 'string' ? entry : entry.id;
+                const aspect = typeof entry === 'object' && entry.aspect ? entry.aspect : '16:9';
+                row.push({ type: 'video', videoId: videoId, aspect: aspect });
             } else if (autoDetect) {
                 // Auto-detect mode: store base path, extension will be resolved at runtime
                 const basePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}`;
@@ -145,7 +149,7 @@ const portfolioProjects = [
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         galleryLayout: [2, 2, 2, 2, 1, 2, 2, 2],  // Total: 15 items (14 images + 1 video)
-        videos: { 9: "nH64bVxXOEA" }
+        videos: { 9: { id: "nH64bVxXOEA", aspect: "3:2" } }
     },
     {
         id: 2,

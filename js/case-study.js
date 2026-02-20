@@ -119,6 +119,11 @@ function renderGallery(project) {
                 const videoWrapper = document.createElement('div');
                 videoWrapper.className = 'gallery-video-wrapper';
 
+                // Calculate padding-bottom from aspect ratio
+                var aspectParts = src.aspect.split(':');
+                var aspectPercent = (parseFloat(aspectParts[1]) / parseFloat(aspectParts[0])) * 100;
+                videoWrapper.style.paddingBottom = aspectPercent.toFixed(4) + '%';
+
                 const iframe = document.createElement('iframe');
                 iframe.src = 'https://www.youtube-nocookie.com/embed/' + src.videoId;
                 iframe.setAttribute('frameborder', '0');
