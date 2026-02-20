@@ -159,7 +159,7 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
         body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
-        galleryLayout: [2]  // Total: 2 images
+        galleryLayout: [2, 2, 3, 2, 2],  // Total: 11 images
     },
     {
         id: 3,
