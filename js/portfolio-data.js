@@ -138,9 +138,9 @@ function getImageWithFormat(basePath, callback) {
 const portfolioProjects = [
     {
         id: 1,
-        title: "CoursePeace",
-        slug: "coursepeace",
-        folder: "project-01_coursepeace",
+        title: "CoursePeaces",
+        slug: "coursepeaces",
+        folder: "project-01_coursepeaces",
         tags: ["illustration"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
