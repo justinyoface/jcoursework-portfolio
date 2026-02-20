@@ -237,7 +237,7 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
         body: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2, 2, 2, 2, 2, 2, 2]  // Total: 14 image
     },
 ];
 
