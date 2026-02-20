@@ -590,10 +590,32 @@ function renderSeeMore(currentProject) {
         // Try thumbnail image first, fall back to full img-1
         const projectNum = String(project.id).padStart(2, '0');
         const baseThumbnailPath = `images/projects/${project.folder}/project-${projectNum}_img-1_thumbnail`;
+        const aspectSuffixes = ['_h', '_v', '_sq'];
+        const imgFormats = ['jpg', 'png', 'gif'];
+        const thumbCandidates = [];
+        aspectSuffixes.forEach(function(s) {
+            imgFormats.forEach(function(f) { thumbCandidates.push(baseThumbnailPath + s + '.' + f); });
+        });
 
-        findThumbnailWithAspect(baseThumbnailPath, function(thumbnailPath) {
-            img.src = thumbnailPath;
-        }, project.image);
+        let thumbIndex = 0;
+        function tryNextThumb() {
+            if (thumbIndex >= thumbCandidates.length) {
+                // No thumbnail found — fall back to img-1
+                const hasExtension = /\.(jpg|jpeg|png|gif)$/i.test(project.image);
+                if (!hasExtension && typeof getImageWithFormat === 'function') {
+                    getImageWithFormat(project.image, function(resolved) { img.src = resolved; });
+                } else {
+                    img.src = project.image;
+                }
+                return;
+            }
+            const candidate = thumbCandidates[thumbIndex];
+            const probe = new Image();
+            probe.onload = function() { img.src = candidate; };
+            probe.onerror = function() { thumbIndex++; tryNextThumb(); };
+            probe.src = candidate;
+        }
+        tryNextThumb();
 
         imageDiv.appendChild(img);
 
