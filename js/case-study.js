@@ -587,18 +587,13 @@ function renderSeeMore(currentProject) {
         img.alt = project.title;
         img.loading = 'lazy';
 
-        // Check if path has no extension (auto-detect mode)
-        const hasExtension = /\.(jpg|jpeg|png|gif)$/i.test(project.image);
+        // Try thumbnail image first, fall back to full img-1
+        const projectNum = String(project.id).padStart(2, '0');
+        const baseThumbnailPath = `images/projects/${project.folder}/project-${projectNum}_img-1_thumbnail`;
 
-        if (!hasExtension && typeof getImageWithFormat === 'function') {
-            // Auto-detect format
-            getImageWithFormat(project.image, function(resolvedPath) {
-                img.src = resolvedPath;
-            });
-        } else {
-            // Use provided path
-            img.src = project.image;
-        }
+        findThumbnailWithAspect(baseThumbnailPath, function(thumbnailPath) {
+            img.src = thumbnailPath;
+        }, project.image);
 
         imageDiv.appendChild(img);
 
