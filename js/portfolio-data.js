@@ -231,7 +231,7 @@ const portfolioProjects = [
     },
     {
         id: 11,
-        title: "Coursework King Marie Tee",
+        title: "Coursework x King Marie Tee",
         slug: "coursework-king-marie-tee",
         folder: "project-11_Coursework-King-Marie-Tee",
         tags: ["illustration"],
