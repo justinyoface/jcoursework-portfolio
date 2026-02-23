@@ -179,7 +179,7 @@ const portfolioProjects = [
         tags: ["motion", "illustration"],
         description: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
         body: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2, 1]  // Total: 3 image
     },
     {
         id: 5,
