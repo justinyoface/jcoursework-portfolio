@@ -229,7 +229,7 @@ const portfolioProjects = [
         tags: ["design"],
         description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
         body: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2, 3]  // Total: 5 image
     },
     {
         id: 10,
