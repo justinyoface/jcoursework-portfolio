@@ -145,7 +145,7 @@ const portfolioProjects = [
         title: "CoursePeaces",
         slug: "coursepeaces",
         folder: "project-01_coursepeaces",
-        tags: ["illustration"],
+        tags: ["illustration", "design"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
@@ -156,7 +156,7 @@ const portfolioProjects = [
         title: "Umaga Brand Illustrations",
         slug: "umaga-brand-illustrations",
         folder: "project-02_umaga-brand-illustrations",
-        tags: ["illustration"],
+        tags: ["illustration", "design"],
         description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
         body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
         galleryLayout: [2, 2, 3, 2, 2],  // Total: 11 images
@@ -196,7 +196,7 @@ const portfolioProjects = [
         title: "Hebru Brand Studios",
         slug: "hebru-brand-studios",
         folder: "project-06_hebru-brand-studios",
-        tags: ["motion", "illustration"],
+        tags: ["motion", "illustration", "design"],
         description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
         body: "Various marketing design for social media and events and apparel design for Hebru Brantley's brand Hebru Brand Studios and his NYC pop-up.",
         galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
