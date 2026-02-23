@@ -163,13 +163,13 @@ const portfolioProjects = [
     },
     {
         id: 3,
-        title: "Drip Collective Tee",
-        slug: "drip-collective-tee",
-        folder: "project-03_drip-collective-tee",
+        title: "Perculator Tee",
+        slug: "perculator-tee",
+        folder: "project-03_perculator-tee",
         tags: ["illustration"],
         description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
         body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2, 1, 1]  // Total: 4 images
     },
     {
         id: 4,
