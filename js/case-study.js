@@ -125,7 +125,9 @@ function renderGallery(project) {
                 videoWrapper.style.paddingBottom = aspectPercent.toFixed(4) + '%';
 
                 const iframe = document.createElement('iframe');
-                iframe.src = 'https://www.youtube-nocookie.com/embed/' + src.videoId;
+                iframe.src = src.platform === 'instagram'
+                    ? 'https://www.instagram.com/p/' + src.videoId + '/embed/'
+                    : 'https://www.youtube-nocookie.com/embed/' + src.videoId;
                 iframe.setAttribute('frameborder', '0');
                 iframe.setAttribute('allowfullscreen', '');
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');

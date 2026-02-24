@@ -19,10 +19,11 @@
  * - tags: Array of tags for filtering (array of strings)
  * - description: Short description shown on portfolio grid (string)
  * - body: Longer body copy for the case study page (string)
- * - videos: (optional) Object mapping slot numbers to YouTube video IDs
- *     Slots with a video ID render a YouTube embed instead of an image
- *     Simple:  videos: { 3: "dQw4w9WgXcQ" }  // 16:9 default
- *     Custom:  videos: { 3: { id: "dQw4w9WgXcQ", aspect: "3:2" } }  // custom aspect ratio
+ * - videos: (optional) Object mapping slot numbers to video IDs
+ *     Slots with a video ID render an embed instead of an image
+ *     Simple:  videos: { 3: "dQw4w9WgXcQ" }  // YouTube, 16:9 default
+ *     YouTube: videos: { 3: { id: "dQw4w9WgXcQ", aspect: "3:2" } }
+ *     Instagram: videos: { 3: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16" } }
  *     Videos play inline and are skipped in the lightbox
  * - galleryLayout: Array defining how many images per row and optional column ratios
  *     Use a number for equal-width columns, or a ratio string for custom widths:
@@ -70,7 +71,8 @@ function generateGallery(projectNumber, folder, galleryLayout, formats, videos) 
                 const entry = videos[imageCounter];
                 const videoId = typeof entry === 'string' ? entry : entry.id;
                 const aspect = typeof entry === 'object' && entry.aspect ? entry.aspect : '16:9';
-                row.push({ type: 'video', videoId: videoId, aspect: aspect });
+                const platform = typeof entry === 'object' && entry.platform ? entry.platform : 'youtube';
+                row.push({ type: 'video', videoId: videoId, aspect: aspect, platform: platform });
             } else if (autoDetect) {
                 // Auto-detect mode: store base path, extension will be resolved at runtime
                 const basePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}`;
@@ -189,7 +191,8 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
         body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
-        galleryLayout: [2, 3, 3, 2, 2, 1, 2, 1]  // Total: 16 images
+        galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
+        videos: { 11: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16" } }
     },
     {
         id: 6,
