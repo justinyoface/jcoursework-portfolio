@@ -644,12 +644,13 @@ function renderSeeMore(currentProject) {
 // GET NEXT N PROJECTS (with wraparound)
 // ============================================
 function getNextProjects(currentProject, count) {
-    const currentIndex = portfolioProjects.findIndex(p => p.id === currentProject.id);
+    const sorted = [...portfolioProjects].sort((a, b) => b.id - a.id);
+    const currentIndex = sorted.findIndex(p => p.id === currentProject.id);
     const results = [];
 
     for (let i = 1; i <= count; i++) {
-        const nextIndex = (currentIndex + i) % portfolioProjects.length;
-        results.push(portfolioProjects[nextIndex]);
+        const nextIndex = (currentIndex + i) % sorted.length;
+        results.push(sorted[nextIndex]);
     }
 
     return results;
