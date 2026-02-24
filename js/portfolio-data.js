@@ -242,7 +242,7 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
         body: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
-        galleryLayout: [1]  // Total: 1 image
+        galleryLayout: [2]  // Total: 2 images
     },
     {
         id: 11,
