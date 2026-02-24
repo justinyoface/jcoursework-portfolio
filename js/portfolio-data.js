@@ -144,55 +144,53 @@ function getImageWithFormat(basePath, callback) {
 const portfolioProjects = [
     {
         id: 1,
-        title: "CoursePeaces",
-        slug: "coursepeaces",
-        folder: "project-01_coursepeaces",
-        tags: ["illustration", "design"],
-        description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
-        videos: { 6: { id: "14J-stFQ5PQ", aspect: "3:2" } }
+        title: "Coursework x King Marie Tee",
+        slug: "coursework-king-marie-tee",
+        folder: "project-01_Coursework-King-Marie-Tee",
+        tags: ["illustration"],
+        description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
+        body: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
+        galleryLayout: [2, 2, 2, 2, 2, 2, 2]  // Total: 14 images
     },
     {
         id: 2,
-        title: "Umaga Brand Illustrations",
-        slug: "umaga-brand-illustrations",
-        folder: "project-02_umaga-brand-illustrations",
-        tags: ["illustration", "design"],
-        description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
-        body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
-        galleryLayout: [2, 2, 3, 2, 2],  // Total: 11 images
+        title: "SPC x Nine Bar T-Shirt",
+        slug: "spc-x-nine-bar-t-shirt",
+        folder: "project-02_SPCxNine-Bar-T-Shirt",
+        tags: ["illustration"],
+        description: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
+        body: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
+        galleryLayout: [2]  // Total: 2 images
     },
     {
         id: 3,
-        title: "Perculator Tee",
-        slug: "perculator-tee",
-        folder: "project-03_perculator-tee",
-        tags: ["illustration"],
-        description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
-        body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
-        galleryLayout: [2, 1, 1]  // Total: 4 images
+        title: "This Is What Asian Looks Like",
+        slug: "this-is-what-asian-looks-like",
+        folder: "project-03_This-Is-What-Asian-Looks-Like",
+        tags: ["design"],
+        description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+        body: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+        galleryLayout: [2, 3]  // Total: 5 images
     },
     {
         id: 4,
-        title: "Artwork Wear Animation",
-        slug: "artwork-wear-animation",
-        folder: "project-04_artwork-wear-animation",
-        tags: ["motion", "illustration"],
-        description: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
-        body: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
-        galleryLayout: [2, 1]  // Total: 3 image
+        title: "Moonshot SPC Packaging Design",
+        slug: "moonshot-spc-packaging-design",
+        folder: "project-04_moonshot-spc-packaging-design",
+        tags: ["design", "illustration"],
+        description: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
+        body: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
+        galleryLayout: [2]  // Total: 2 images
     },
     {
         id: 5,
-        title: "Coursework Fresh Produce Only",
-        slug: "coursework-fresh-produce-only",
-        folder: "project-05_coursework-fresh-produce-only",
+        title: "Kick Push Kid Print",
+        slug: "kick-push-kid-print",
+        folder: "project-05_kick-push-kid-print",
         tags: ["illustration"],
-        description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
-        body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
-        galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
-        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16" } }
+        description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
+        body: "A limited edition screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
+        galleryLayout: [2, 2, 2]  // Total: 6 images
     },
     {
         id: 6,
@@ -206,53 +204,55 @@ const portfolioProjects = [
     },
     {
         id: 7,
-        title: "Kick Push Kid Print",
-        slug: "kick-push-kid-print",
-        folder: "project-07_kick-push-kid-print",
+        title: "Coursework Fresh Produce Only",
+        slug: "coursework-fresh-produce-only",
+        folder: "project-07_coursework-fresh-produce-only",
         tags: ["illustration"],
-        description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
-        body: "A limited edition screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
-        galleryLayout: [2, 2, 2]  // Total: 6 image
+        description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
+        body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
+        galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
+        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16" } }
     },
     {
         id: 8,
-        title: "Moonshot SPC Packaging Design",
-        slug: "moonshot-spc-packaging-design",
-        folder: "project-08_moonshot-spc-packaging-design",
-        tags: ["design", "illustration"],
-        description: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
-        body: "Illustrative packaging design for Side Practice Coffee—a coffee company that uplifts and showcases minority-owned businesses and creatives. The concept of the illustrative pattern expresses various crafts or practices of the creative community that SPC uplifts.",
-        galleryLayout: [2]  // Total: 2 image
+        title: "Artwork Wear Animation",
+        slug: "artwork-wear-animation",
+        folder: "project-08_artwork-wear-animation",
+        tags: ["motion", "illustration"],
+        description: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
+        body: "An animated illustration that explores the idea that fashion in a digital expression doesn't have to conform to the physics of reality. Illustrated in Photoshop and animated in Adobe Animate and After Effects.",
+        galleryLayout: [2, 1]  // Total: 3 images
     },
     {
         id: 9,
-        title: "This Is What Asian Looks Like",
-        slug: "this-is-what-asian-looks-like",
-        folder: "project-09_This-Is-What-Asian-Looks-Like",
-        tags: ["design"],
-        description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
-        body: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
-        galleryLayout: [2, 3]  // Total: 5 image
+        title: "Perculator Tee",
+        slug: "perculator-tee",
+        folder: "project-09_perculator-tee",
+        tags: ["illustration"],
+        description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
+        body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
+        galleryLayout: [2, 1, 1]  // Total: 4 images
     },
     {
         id: 10,
-        title: "SPC x Nine Bar T-Shirt",
-        slug: "spc-x-nine-bar-t-shirt",
-        folder: "project-10_SPCxNine-Bar-T-Shirt",
-        tags: ["illustration"],
-        description: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
-        body: "A collaborative T-shirt design for Side Practice Coffee and Nine Bar. Side Practice Coffee is well known for uplifting and showcasing minority-owned businesses and creatives, so this design was made to help showcase Nine Bar's pop-up event.",
-        galleryLayout: [2]  // Total: 2 images
+        title: "Umaga Brand Illustrations",
+        slug: "umaga-brand-illustrations",
+        folder: "project-10_umaga-brand-illustrations",
+        tags: ["illustration", "design"],
+        description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
+        body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
+        galleryLayout: [2, 2, 3, 2, 2],  // Total: 11 images
     },
     {
         id: 11,
-        title: "Coursework x King Marie Tee",
-        slug: "coursework-king-marie-tee",
-        folder: "project-11_Coursework-King-Marie-Tee",
-        tags: ["illustration"],
-        description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
-        body: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
-        galleryLayout: [2, 2, 2, 2, 2, 2, 2]  // Total: 14 image
+        title: "CoursePeaces",
+        slug: "coursepeaces",
+        folder: "project-11_coursepeaces",
+        tags: ["illustration", "design"],
+        description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
+        body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
+        galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
+        videos: { 6: { id: "14J-stFQ5PQ", aspect: "3:2" } }
     },
 ];
 

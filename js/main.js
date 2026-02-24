@@ -99,8 +99,9 @@ function renderPortfolio() {
     const portfolioGrid = document.getElementById('portfolioGrid');
     portfolioGrid.innerHTML = '';
 
-    // Add all items with scroll-fade class for viewport-aware entrance
-    portfolioProjects.forEach((project, index) => {
+    // Render newest projects first (highest ID = newest)
+    const sortedProjects = [...portfolioProjects].sort((a, b) => b.id - a.id);
+    sortedProjects.forEach((project, index) => {
         project.originalIndex = index;
         const portfolioItem = createPortfolioItem(project, index);
         portfolioItem.classList.add('scroll-fade');
