@@ -105,14 +105,15 @@ function renderGallery(project) {
             rowEl.style.gridTemplateColumns = 'repeat(' + row.length + ', 1fr)';
         }
 
-        // Track images in this row for aspect-ratio computation
+        // Track images and item aspect ratios in this row for column computation
         const rowImages = [];
+        const rowItemAspects = []; // Pre-computed AR per slot (null = derive from image)
 
         row.forEach((src, colIndex) => {
             const isVideo = typeof src === 'object' && src.type === 'video';
 
             if (isVideo) {
-                // Render YouTube video embed
+                // Render video embed
                 const wrapper = document.createElement('div');
                 wrapper.className = 'gallery-row-item gallery-row-item--video';
 
@@ -137,7 +138,9 @@ function renderGallery(project) {
                 videoWrapper.appendChild(iframe);
                 wrapper.appendChild(videoWrapper);
                 rowEl.appendChild(wrapper);
-                // Videos don't get added to lightbox or rowImages
+                // Track video aspect ratio for column computation; don't add to rowImages
+                var vParts = src.aspect ? src.aspect.split(':') : ['16', '9'];
+                rowItemAspects.push(parseFloat(vParts[0]) / parseFloat(vParts[1]));
                 flatIndex++;
             } else {
                 // Render image (existing behavior)
@@ -181,6 +184,7 @@ function renderGallery(project) {
                 }
 
                 rowImages.push(imgEl);
+                rowItemAspects.push(null); // Will be derived from natural image dimensions
                 wrapper.appendChild(imgEl);
                 rowEl.appendChild(wrapper);
                 flatIndex++;
@@ -189,18 +193,22 @@ function renderGallery(project) {
 
         galleryContainer.appendChild(rowEl);
 
-        // For auto-compute rows (number entries > 1), recompute columns
-        // from actual image aspect ratios once all images have loaded
-        if (isAutoCompute && rowImages.length > 1) {
+        // For auto-compute rows (number entries > 1), recompute columns from actual
+        // aspect ratios once images have loaded. Videos use their declared aspect ratio.
+        if (isAutoCompute && row.length > 1) {
             waitForImages(rowImages, function() {
-                var aspectRatios = rowImages.map(function(img) {
-                    if (img.naturalWidth > 0 && img.naturalHeight > 0) {
-                        return img.naturalWidth / img.naturalHeight;
+                var imgIdx = 0;
+                var columns = rowItemAspects.map(function(ar) {
+                    if (ar !== null) {
+                        // Video slot — use declared aspect ratio
+                        return ar.toFixed(4) + 'fr';
                     }
-                    return 1; // fallback to square
-                });
-                var columns = aspectRatios.map(function(ar) {
-                    return ar.toFixed(4) + 'fr';
+                    // Image slot — use natural dimensions
+                    var img = rowImages[imgIdx++];
+                    var naturalAR = (img.naturalWidth > 0 && img.naturalHeight > 0)
+                        ? img.naturalWidth / img.naturalHeight
+                        : 1;
+                    return naturalAR.toFixed(4) + 'fr';
                 }).join(' ');
                 rowEl.style.gridTemplateColumns = columns;
             });
