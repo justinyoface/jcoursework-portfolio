@@ -212,7 +212,7 @@ const portfolioProjects = [
         description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
         body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
         galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
-        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16" } }
+        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16", mobileCover: "project-07_img-16_video-cover-mobile_v.jpg" } }
     },
     {
         id: 8,
