@@ -8,6 +8,7 @@
 // ============================================
 let currentLightboxIndex = 0;
 let galleryImageSources = [];
+let galleryMobileSources = [];
 let lightboxScrollDelta = 0;
 let isZoomed = false;
 let touchStartX = 0;
@@ -85,6 +86,7 @@ function renderGallery(project) {
 
     // Build flat source list for lightbox
     galleryImageSources = [];
+    galleryMobileSources = [];
     let flatIndex = 0;
 
     rows.forEach((row, rowIndex) => {
@@ -167,6 +169,7 @@ function renderGallery(project) {
                 const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : (srcObj ? srcObj.src : src);
                 const mobileSrc = srcObj ? srcObj.mobileSrc : null;
                 galleryImageSources.push(imageSrc);
+                galleryMobileSources.push(mobileSrc || null);
 
                 const wrapper = document.createElement('div');
                 wrapper.className = 'gallery-row-item';
@@ -360,8 +363,9 @@ function openLightbox(index) {
     lightboxImg.style.transform = 'translate(-50%, -50%) scale(1.1)';
     lightboxImg.style.opacity = '0';
 
-    // Set image source
-    lightboxImg.src = galleryImageSources[index];
+    // Set image source (use mobile version on mobile if available)
+    const isMobileLightbox = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    lightboxImg.src = (isMobileLightbox && galleryMobileSources[index]) ? galleryMobileSources[index] : galleryImageSources[index];
     lightboxImg.alt = 'Gallery image ' + (index + 1);
     updateCounter(index + 1, galleryImageSources.length, false);
 
@@ -588,7 +592,8 @@ function updateLightboxImage() {
     img.style.opacity = '0';
 
     setTimeout(() => {
-        img.src = galleryImageSources[currentLightboxIndex];
+        const isMobileLightboxNav = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        img.src = (isMobileLightboxNav && galleryMobileSources[currentLightboxIndex]) ? galleryMobileSources[currentLightboxIndex] : galleryImageSources[currentLightboxIndex];
         img.alt = 'Gallery image ' + (currentLightboxIndex + 1);
 
         // Reset zoom state
