@@ -810,6 +810,7 @@ img {
 /* Video embeds in gallery */
 .gallery-row-item--video {
     cursor: default;
+    overflow: visible; /* Prevent iOS Safari iframe interaction bug (overflow:hidden + border-radius blocks taps) */
 }
 
 .gallery-video-wrapper {
