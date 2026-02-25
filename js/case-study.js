@@ -168,7 +168,9 @@ function renderGallery(project) {
                 flatIndex++;
             } else {
                 // Render image (existing behavior)
-                const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : src;
+                const srcObj = typeof src === 'object' && src.type === 'image' ? src : null;
+                const imageSrc = (rowIndex === 0 && colIndex === 0) ? project.image : (srcObj ? srcObj.src : src);
+                const mobileSrc = srcObj ? srcObj.mobileSrc : null;
                 galleryImageSources.push(imageSrc);
 
                 const wrapper = document.createElement('div');
@@ -209,7 +211,19 @@ function renderGallery(project) {
 
                 rowImages.push(imgEl);
                 rowItemAspects.push(null); // Will be derived from natural image dimensions
-                wrapper.appendChild(imgEl);
+
+                if (mobileSrc) {
+                    const pictureEl = document.createElement('picture');
+                    const sourceEl = document.createElement('source');
+                    sourceEl.media = '(max-width: 768px)';
+                    sourceEl.srcset = mobileSrc;
+                    pictureEl.appendChild(sourceEl);
+                    pictureEl.appendChild(imgEl);
+                    wrapper.appendChild(pictureEl);
+                } else {
+                    wrapper.appendChild(imgEl);
+                }
+
                 rowEl.appendChild(wrapper);
                 flatIndex++;
             }

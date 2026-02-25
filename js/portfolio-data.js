@@ -51,7 +51,7 @@
 // ============================================
 // HELPER FUNCTION: Generate Gallery from Layout
 // ============================================
-function generateGallery(projectNumber, folder, galleryLayout, formats, videos) {
+function generateGallery(projectNumber, folder, galleryLayout, formats, videos, mobileImages) {
     const gallery = [];
     let imageCounter = 1;
 
@@ -77,12 +77,20 @@ function generateGallery(projectNumber, folder, galleryLayout, formats, videos) 
             } else if (autoDetect) {
                 // Auto-detect mode: store base path, extension will be resolved at runtime
                 const basePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}`;
-                row.push(basePath);
+                if (mobileImages && mobileImages[imageCounter]) {
+                    row.push({ type: 'image', src: basePath, mobileSrc: `images/projects/${folder}/${mobileImages[imageCounter]}` });
+                } else {
+                    row.push(basePath);
+                }
             } else {
                 // Use specific format from array, or fall back to single format
                 const format = formatArray ? (formatArray[imageCounter - 1] || 'jpg') : singleFormat;
                 const imagePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}.${format}`;
-                row.push(imagePath);
+                if (mobileImages && mobileImages[imageCounter]) {
+                    row.push({ type: 'image', src: imagePath, mobileSrc: `images/projects/${folder}/${mobileImages[imageCounter]}` });
+                } else {
+                    row.push(imagePath);
+                }
             }
             imageCounter++;
         }
@@ -212,7 +220,8 @@ const portfolioProjects = [
         description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
         body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
         galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
-        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16", mobileCover: "project-07_img-16_video-cover-mobile_v.jpg" } }
+        videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16", mobileCover: "project-07_img-16_video-cover-mobile_v.jpg" } },
+        mobileImages: { 17: "project-07_img-17_m_v.jpg" }
     },
     {
         id: 8,
@@ -288,7 +297,7 @@ portfolioProjects.forEach(project => {
         project._imageAuto = isAuto; // Flag for runtime detection
 
         // Generate gallery from layout
-        project.gallery = generateGallery(project.id, project.folder, project.galleryLayout, formats, project.videos);
+        project.gallery = generateGallery(project.id, project.folder, project.galleryLayout, formats, project.videos, project.mobileImages);
     }
 });
 
