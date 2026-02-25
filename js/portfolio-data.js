@@ -72,7 +72,8 @@ function generateGallery(projectNumber, folder, galleryLayout, formats, videos) 
                 const videoId = typeof entry === 'string' ? entry : entry.id;
                 const aspect = typeof entry === 'object' && entry.aspect ? entry.aspect : '16:9';
                 const platform = typeof entry === 'object' && entry.platform ? entry.platform : 'youtube';
-                row.push({ type: 'video', videoId: videoId, aspect: aspect, platform: platform });
+                const mobileCover = typeof entry === 'object' && entry.mobileCover ? entry.mobileCover : null;
+                row.push({ type: 'video', videoId: videoId, aspect: aspect, platform: platform, mobileCover: mobileCover });
             } else if (autoDetect) {
                 // Auto-detect mode: store base path, extension will be resolved at runtime
                 const basePath = `images/projects/${folder}/project-${String(projectNumber).padStart(2, '0')}_img-${imageCounter}`;
