@@ -845,6 +845,7 @@ img {
     object-fit: cover;
     border-radius: 4px;
     display: block;
+    opacity: 1; /* Override gallery fade-in; cover images should always be immediately visible */
 }
 
 /* ===================================

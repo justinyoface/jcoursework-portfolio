@@ -139,11 +139,6 @@ function renderGallery(project) {
                     coverImg.alt = project.title + ' – tap to watch on Instagram';
                     coverImg.loading = 'lazy';
                     coverImg.src = 'images/projects/' + project.folder + '/' + src.mobileCover;
-                    if (coverImg.complete && coverImg.naturalWidth > 0) {
-                        coverImg.classList.add('is-loaded');
-                    } else {
-                        coverImg.addEventListener('load', function() { coverImg.classList.add('is-loaded'); });
-                    }
 
                     link.appendChild(coverImg);
                     videoWrapper.appendChild(link);
