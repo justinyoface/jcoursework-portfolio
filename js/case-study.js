@@ -125,17 +125,36 @@ function renderGallery(project) {
                 var aspectPercent = (parseFloat(aspectParts[1]) / parseFloat(aspectParts[0])) * 100;
                 videoWrapper.style.paddingBottom = aspectPercent.toFixed(4) + '%';
 
-                const iframe = document.createElement('iframe');
-                iframe.src = src.platform === 'instagram'
-                    ? 'https://www.instagram.com/p/' + src.videoId + '/embed/'
-                    : 'https://www.youtube-nocookie.com/embed/' + src.videoId;
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                iframe.loading = 'lazy';
-                iframe.title = project.title + ' video';
+                const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-                videoWrapper.appendChild(iframe);
+                if (src.platform === 'instagram' && src.mobileCover && isMobile) {
+                    // On mobile: show a tappable placeholder image that opens the post in the Instagram app
+                    const link = document.createElement('a');
+                    link.href = 'https://www.instagram.com/p/' + src.videoId + '/';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.className = 'gallery-video-mobile-cover';
+
+                    const coverImg = document.createElement('img');
+                    coverImg.src = 'images/projects/' + project.folder + '/' + src.mobileCover;
+                    coverImg.alt = project.title + ' – tap to watch on Instagram';
+                    coverImg.loading = 'lazy';
+
+                    link.appendChild(coverImg);
+                    videoWrapper.appendChild(link);
+                } else {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = src.platform === 'instagram'
+                        ? 'https://www.instagram.com/p/' + src.videoId + '/embed/'
+                        : 'https://www.youtube-nocookie.com/embed/' + src.videoId;
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.loading = 'lazy';
+                    iframe.title = project.title + ' video';
+                    videoWrapper.appendChild(iframe);
+                }
+
                 wrapper.appendChild(videoWrapper);
                 rowEl.appendChild(wrapper);
                 // Track video aspect ratio for column computation; don't add to rowImages

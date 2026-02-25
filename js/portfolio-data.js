@@ -263,10 +263,10 @@ const portfolioProjects = [
         description: "An event celebrating Filipino American History Month hosted by artist and DJ King Marie and owner of Classick Studios in Chicago, Chris Inumerable.",
         body: "An event celebrating Filipino American History Month hosted by artist and DJ King Marie and owner of Classick Studios in Chicago, Chris Inumerable. Event photography by Rici (@filmedbyrici)",
         galleryLayout: [2, 1, 2, 3, 2, 2, 2, 2, 2],  // Total: 18 items (15 images + 3 videos)
-        videos: { 
-            2: { platform: "instagram", id: "DPWnpsnkRD-", aspect: "9:16" },
+        videos: {
+            2: { platform: "instagram", id: "DPWnpsnkRD-", aspect: "9:16", mobileCover: "project-12_img-2_video-cover-mobile_v.jpg" },
             9: { id: "cyXwdcPNkXQ", aspect: "16:9" },
-            18: { platform: "instagram", id: "DPrUyaojUni", aspect: "9:16" }
+            18: { platform: "instagram", id: "DPrUyaojUni", aspect: "9:16", mobileCover: "project-12_img-18_video-cover-mobile_v.jpg" }
         }
     },
 ];
