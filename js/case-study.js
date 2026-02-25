@@ -136,9 +136,14 @@ function renderGallery(project) {
                     link.className = 'gallery-video-mobile-cover';
 
                     const coverImg = document.createElement('img');
-                    coverImg.src = 'images/projects/' + project.folder + '/' + src.mobileCover;
                     coverImg.alt = project.title + ' – tap to watch on Instagram';
                     coverImg.loading = 'lazy';
+                    coverImg.src = 'images/projects/' + project.folder + '/' + src.mobileCover;
+                    if (coverImg.complete && coverImg.naturalWidth > 0) {
+                        coverImg.classList.add('is-loaded');
+                    } else {
+                        coverImg.addEventListener('load', function() { coverImg.classList.add('is-loaded'); });
+                    }
 
                     link.appendChild(coverImg);
                     videoWrapper.appendChild(link);
