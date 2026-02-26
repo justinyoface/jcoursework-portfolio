@@ -158,7 +158,7 @@ const portfolioProjects = [
         folder: "project-01_Coursework-King-Marie-Tee",
         tags: ["illustration"],
         description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
-        body: "A T-shirt collaboration between my brand Coursework and artist and DJ King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021. Lookbook photography by Tori Howard.",
+        body: "A T-shirt collaboration between Coursework and artist and DJ King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021. The graphic tee showcases a box being parachuted down from a plane to represent the idea of relief and support for those affected by the typhoon. This box is known as a \"Balikbayan box\" which is a care package shipped by Filipinos living abroad (balikbayans) to their families in the Philippines. Lookbook photography by Tori Howard and art direction by Justin Rodriguez.",
         galleryLayout: [2, 2, 2, 2, 2, 2, 2]  // Total: 14 images
     },
     {
@@ -178,7 +178,10 @@ const portfolioProjects = [
         folder: "project-03_This-Is-What-Asian-Looks-Like",
         tags: ["design"],
         description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
-        body: "Graphic design work for an event celebrating Asian American Pacific Islander (AAPI) month hosted by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+        body: [
+            "Graphic design work for an event celebrating Asian American Pacific Islander (AAPI) month hosted by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+            "The typographically-driven design uses bold type and characters overlaid on the faces of Asian Americans to express the frustration of being stereotyped as an Asian and the desire to be seen for who you are."
+        ],
         galleryLayout: [2, 3]  // Total: 5 images
     },
     {
@@ -198,7 +201,10 @@ const portfolioProjects = [
         folder: "project-05_kick-push-kid-print",
         tags: ["illustration"],
         description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
-        body: "A limited-edition screen-printed poster for my brand Coursework. The Kick Push Kid illustration mixes my appreciation for the art of The Adventures of Tin Tin with my love of skateboarding.",
+        body: [
+            "A limited-edition screen-printed poster for my brand Coursework. The Kick Push Kid illustration mixes my appreciation for the art of The Adventures of Tin Tin with my love of skateboarding.",
+            "Screen printed by All Star Press in Chicago."
+        ],
         galleryLayout: [2, 2, 2]  // Total: 6 images
     },
     {
@@ -208,7 +214,7 @@ const portfolioProjects = [
         folder: "project-06_hebru-brand-studios",
         tags: ["motion", "illustration", "design"],
         description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
-        body: "Various graphics for social media marketing, events and apparel design for Hebru Brantley's brand Hebru Brand Studios leading up to his NYC pop-up event in May of 2018.",
+        body: "Various graphics for social media marketing, events and apparel design for Hebru Brantley's brand Hebru Brand Studios. I worked embedded within their creative team alongside a junior designer I managed to execute on the various projects leading up to their NYC pop-up event in May of 2018.",
         galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
     },
     {
@@ -260,7 +266,7 @@ const portfolioProjects = [
         folder: "project-11_coursepeaces",
         tags: ["illustration", "design"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        body: "CoursePeaces is an art series that celebrates creative culture ranging from art prints, a NFT collection, apparel and a designer toy figure. The art consists of various peace signs holding objects that represent different crafts and nods to pop culture that reflect nostalgia and my personal inspirations. Over a span of two years, I illustrated 760 elements that were combined in a variety of compositions to create 5,000 unique artworks. The project was launched in March of 2024 with an art print drop and a NFT collection on OpenSea. I also worked with toy designer Oasim Karmieh on creating a limited-edition toy figure with based on the primary CoursePeace design.",
+        body: "CoursePeaces is an art series that celebrates creative culture ranging from art prints, a NFT collection, apparel and a designer toy figure. The concept derives from the play on of words of \"art piece\" and \"art\" \"peace\" and the art consists of peace signs holding various objects that represent different crafts and nods to pop culture, nostalgia and my inspirations. Over a span of two years, I illustrated 760 elements that were combined in a variety of compositions to create 5,000 unique artworks.",
         galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
         videos: { 6: { id: "14J-stFQ5PQ", aspect: "3:2" } }
     },
