@@ -1138,6 +1138,9 @@ img {
 }
 
 .about-bio-text h3 {
+    font-size: var(--text-h5);
+    font-weight: 600;
+    line-height: var(--lh-h5);
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
 }
