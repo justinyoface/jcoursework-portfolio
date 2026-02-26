@@ -1622,7 +1622,7 @@ img {
 @media (min-width: 1024px) {
     .case-study {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
         column-gap: var(--spacing-xl);
     }
 
