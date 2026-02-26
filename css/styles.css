@@ -1137,6 +1137,11 @@ img {
     border-left: 1px solid #000000;
 }
 
+.about-bio-text h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
 .about-bio-text p:last-child {
     margin-bottom: 0;
 }
