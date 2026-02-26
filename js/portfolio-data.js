@@ -247,7 +247,8 @@ const portfolioProjects = [
         tags: ["illustration"],
         description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
         body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music. The design plays on the lyrics of the iconic Chicago House song \"Perculator\" by Cajmere while mixing it with a redesign of the Bialetti coffee brand character.",
-        galleryLayout: [2, 1, 1]  // Total: 4 images
+        galleryLayout: [2, 1, 1],  // Total: 4 images
+        mobileImages: { 3: "project-09_img-3_m_h.jpg", 4: "project-09_img-4_m_h.jpg" }
     },
     {
         id: 10,
