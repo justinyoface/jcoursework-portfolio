@@ -158,7 +158,7 @@ const portfolioProjects = [
         folder: "project-01_Coursework-King-Marie-Tee",
         tags: ["illustration"],
         description: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
-        body: "A T-shirt collaboration between Coursework and artist King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021.",
+        body: "A T-shirt collaboration between my brand Coursework and artist and DJ King Marie. This t-shirt was created to raise awareness and funds for hurricane relief efforts in the Philippines for Typhoon Rai in 2021. Lookbook photography by Tori Howard.",
         galleryLayout: [2, 2, 2, 2, 2, 2, 2]  // Total: 14 images
     },
     {
@@ -178,7 +178,7 @@ const portfolioProjects = [
         folder: "project-03_This-Is-What-Asian-Looks-Like",
         tags: ["design"],
         description: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
-        body: "Graphic design work for an event celebrating AAPI month put on by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
+        body: "Graphic design work for an event celebrating Asian American Pacific Islander (AAPI) month hosted by DJ and artist King Marie. This event showcases Asian creatives with the goal of breaking the stereotype of what it means to be Asian.",
         galleryLayout: [2, 3]  // Total: 5 images
     },
     {
@@ -198,7 +198,7 @@ const portfolioProjects = [
         folder: "project-05_kick-push-kid-print",
         tags: ["illustration"],
         description: "A limited editioned screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
-        body: "A limited edition screen-printed character illustration for Coursework with nods to The Adventures of Tin Tin.",
+        body: "A limited-edition screen-printed poster for my brand Coursework. The Kick Push Kid illustration mixes my appreciation for the art of The Adventures of Tin Tin with my love of skateboarding.",
         galleryLayout: [2, 2, 2]  // Total: 6 images
     },
     {
@@ -208,7 +208,7 @@ const portfolioProjects = [
         folder: "project-06_hebru-brand-studios",
         tags: ["motion", "illustration", "design"],
         description: "Marketing and apparel design work for Hebru Brand Studios and their NYC pop-up.",
-        body: "Various marketing design for social media and events and apparel design for Hebru Brantley's brand Hebru Brand Studios and his NYC pop-up.",
+        body: "Various graphics for social media marketing, events and apparel design for Hebru Brantley's brand Hebru Brand Studios leading up to his NYC pop-up event in May of 2018.",
         galleryLayout: [2, 2, 2, 2, 2, 2]  // Total: 12 images
     },
     {
@@ -218,7 +218,7 @@ const portfolioProjects = [
         folder: "project-07_coursework-fresh-produce-only",
         tags: ["illustration"],
         description: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to producing art.",
-        body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art.",
+        body: "A collection for my brand Coursework that revolved around the motif of using fruit stickers as a play on of words to connect produce such as fruits to the concept of producing art. The collection consists of graphic tees, cut and sewn garments, headwear and a tote bag. Lookbook photography by Tori Howard and JP Calubaquib.",
         galleryLayout: [2, 3, 3, 3, 2, 1, 2, 1],  // Total: 17 items (16 images + 1 video)
         videos: { 16: { platform: "instagram", id: "DDQVLHqvlYZ", aspect: "9:16", mobileCover: "project-07_img-16_video-cover-mobile_v.jpg" } },
         mobileImages: { 17: "project-07_img-17_m_v.jpg" }
@@ -240,17 +240,17 @@ const portfolioProjects = [
         folder: "project-09_perculator-tee",
         tags: ["illustration"],
         description: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
-        body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music.",
+        body: "A t-shirt design for Chicago-based coffee shop Drip Collective mixing coffee with inspiration from Chicago House music. The design plays on the lyrics of the iconic Chicago House song \"Perculator\" by Cajmere while mixing it with a redesign of the Bialetti coffee brand character.",
         galleryLayout: [2, 1, 1]  // Total: 4 images
     },
     {
         id: 10,
-        title: "Umaga Brand Illustrations",
-        slug: "umaga-brand-illustrations",
-        folder: "project-10_umaga-brand-illustrations",
+        title: "Umaga Brand Graphics",
+        slug: "umaga-brand-graphics",
+        folder: "project-10_umaga-brand-graphics",
         tags: ["illustration", "design"],
         description: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. These illustrations serve as supporting interior decor.",
-        body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by the interior designer working on the design of the space prior to the opening to create interior graphics for visual interest that also serve as supporting brand elements.",
+        body: "Environmental interior graphics for Chicago-based Filipino bakery Umaga. I was approached by Umaga's interior designer prior to the opening of their shop to create graphics that would compliment the interior design of the space while also serving as supporting brand elements.",
         galleryLayout: [2, 2, 3, 2, 2],  // Total: 11 images
     },
     {
@@ -260,7 +260,7 @@ const portfolioProjects = [
         folder: "project-11_coursepeaces",
         tags: ["illustration", "design"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
-        body: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
+        body: "CoursePeaces is an art series that celebrates creative culture ranging from art prints, a NFT collection, apparel and a designer toy figure. The art consists of various peace signs holding objects that represent different crafts and nods to pop culture that reflect nostalgia and my personal inspirations. Over a span of two years, I illustrated 760 elements that were combined in a variety of compositions to create 5,000 unique artworks. The project was launched in March of 2024 with an art print drop and a NFT collection on OpenSea. I also worked with toy designer Oasim Karmieh on creating a limited-edition toy figure with based on the primary CoursePeace design.",
         galleryLayout: [2, 2, 2, 2, 2, 2, 2],  // Total: 14 items (13 images + 1 video)
         videos: { 6: { id: "14J-stFQ5PQ", aspect: "3:2" } }
     },
@@ -270,8 +270,8 @@ const portfolioProjects = [
         slug: "filipinx",
         folder: "project-12_filipinx",
         tags: ["design"],
-        description: "An event celebrating Filipino American History Month hosted by artist and DJ King Marie and owner of Classick Studios in Chicago, Chris Inumerable.",
-        body: "An event celebrating Filipino American History Month hosted by artist and DJ King Marie and owner of Classick Studios in Chicago, Chris Inumerable. Event photography by Rici (@filmedbyrici)",
+        description: "An event celebrating Filipino-American History Month hosted by artist and DJ King Marie and owner of Classick Studios in Chicago, Chris Inumerable.",
+        body: "An event celebrating Filipino-American History Month showcasing some of the best Filipino-American artists and DJs. Hosted by artist and DJ, King Marie and owner of Classick Studios in Chicago, Chris Inumerable. I was tasked with the creative direction and design of the event marketing and merchandise. To celebrate Filipin-American culture, I wanted to tap into a shared experience that the community could all resonate with—karaoke. Many of us grow up in homes with karaoke machines that you'll bust out at a family party. I wanted the graphics to nod to that shared connection. Event photography by Rici (@filmedbyrici), video by Luis Danao.",
         galleryLayout: [2, 1, 2, 3, 2, 2, 2, 2, 2],  // Total: 18 items (15 images + 3 videos)
         videos: {
             2: { platform: "instagram", id: "DPWnpsnkRD-", aspect: "9:16", mobileCover: "project-12_img-2_video-cover-mobile_v.jpg" },
@@ -286,7 +286,7 @@ const portfolioProjects = [
         folder: "project-13_magnificent-mondo",
         tags: ["illustration", "design"],
         description: "A children's book written by Brian C. Rodriguez and illustrated by Justin Rodriguez about a pigeon who dreams of becoming the greatest magician despite those who doubt him. It's a story about self belief and following your dreams without permission.",
-        body: "Magnificent Mondo is a self published children's book written by Brian C. Rodriguez and illustrated by Justin Rodriguez about a pigeon who dreams of becoming the greatest magician despite those who doubt him. It's a story about self belief and following your dreams without permission. I served as the illustrator and designer which included character design, original illustrations, logo design and book design. We also created merch as rewards for our Kickstarter which we successfully funded in December of 2025.",
+        body: "Magnificent Mondo is a children's book written by Brian C. Rodriguez and illustrated by Justin Rodriguez about a pigeon who dreams of becoming the greatest magician despite those who doubt him. It's a story about self belief and following your dreams without permission. As the illustrator and designer, I worked on character design, original illustrations, logo design and book design. We also created merch as rewards for our Kickstarter which we successfully funded in December of 2025.",
         galleryLayout: [2, 2, 2, 1, 1, 1, 1, 2, 3, 2],  // Total: 17 items (16 images + 1 video)
         videos: { 10: { id: "bOZCbIjtvKs", aspect: "16:9" } }
     },
