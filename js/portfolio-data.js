@@ -279,6 +279,17 @@ const portfolioProjects = [
             18: { platform: "instagram", id: "DPrUyaojUni", aspect: "9:16", mobileCover: "project-12_img-18_video-cover-mobile_v.jpg" }
         }
     },
+    {
+        id: 13,
+        title: "Magnificent Mondo",
+        slug: "magnificent-mondo",
+        folder: "project-13_magnificent-mondo",
+        tags: ["illustration", "design"],
+        description: "A children's book written by Brian C. Rodriguez and illustrated by Justin Rodriguez about a pigeon who dreams of becoming the greatest magician despite those who doubt him. It's a story about self belief and following your dreams without permission.",
+        body: "Magnificent Mondo is a self published children's book written by Brian C. Rodriguez and illustrated by Justin Rodriguez about a pigeon who dreams of becoming the greatest magician despite those who doubt him. It's a story about self belief and following your dreams without permission. I served as the illustrator and designer which included character design, original illustrations, logo design and book design. We also created merch as rewards for our Kickstarter which we successfully funded in December of 2025.",
+        galleryLayout: [2, 2, 2, 1, 1, 1, 1, 2, 3, 2],  // Total: 17 items (16 images + 1 video)
+        videos: { 10: { id: "bOZCbIjtvKs", aspect: "16:9" } }
+    },
 ];
 
 // ============================================
