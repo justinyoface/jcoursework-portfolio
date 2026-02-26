@@ -1615,3 +1615,26 @@ img {
 }
 
 /* Media query for portfolio-grid removed - using responsive masonry layout defined at top of file */
+
+/* ===================================
+   CASE STUDY — WIDE DESKTOP 50/50 LAYOUT
+   =================================== */
+@media (min-width: 1024px) {
+    .case-study {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--spacing-xl);
+    }
+
+    .case-study-body {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        max-width: none;
+        align-self: start;
+    }
+
+    .case-study-gallery,
+    .see-more {
+        grid-column: 1 / -1;
+    }
+}
