@@ -71,7 +71,13 @@ function renderCaseStudy(project) {
         .map(tag => `<span class="tag">${formatTagName(tag)}</span>`)
         .join('');
 
-    document.getElementById('caseStudyBody').textContent = project.body || project.description;
+    const bodyContent = project.body || project.description;
+    const bodyEl = document.getElementById('caseStudyBody');
+    if (Array.isArray(bodyContent)) {
+        bodyEl.innerHTML = bodyContent.map(p => `<p>${p}</p>`).join('');
+    } else {
+        bodyEl.textContent = bodyContent;
+    }
 
     renderGallery(project);
 }
