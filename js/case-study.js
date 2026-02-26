@@ -211,6 +211,15 @@ function renderGallery(project) {
                     onImageLoad();
                 } else {
                     imgEl.addEventListener('load', onImageLoad);
+                    // When a <picture> element with a mobile source is used, setting
+                    // imgEl.src asynchronously (auto-detect mode) can interrupt the
+                    // in-progress <source> load, causing the load event on imgEl to
+                    // never fire. Probe the mobile source directly as a safety net.
+                    if (mobileSrc) {
+                        const mobileProbe = new Image();
+                        mobileProbe.onload = onImageLoad;
+                        mobileProbe.src = mobileSrc;
+                    }
                 }
 
                 rowImages.push(imgEl);
