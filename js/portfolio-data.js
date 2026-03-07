@@ -268,7 +268,7 @@ const portfolioProjects = [
         tags: ["illustration", "design"],
         description: "An art series celebrating creative culture through various peace signs holding objects that represent different crafts and pop culture.",
         body: [
-            "CoursePeaces is an art series that celebrates creative culture ranging from art prints, a NFT collection, apparel and a designer toy figure. The concept derives from the play on of words of \"art piece\" and \"art\" \"peace\" and the art consists of peace signs holding various objects that represent different crafts and nods to pop culture, nostalgia and my inspirations. Over a span of two years, I illustrated 760 elements that were combined in a variety of compositions to create 5,000 unique artworks. Video by Carlo Liou of Rise Above & Prosper, a Chicago-based creative production company.",
+            "CoursePeaces is an art series that celebrates creative culture ranging from art prints, a NFT collection, apparel and a designer toy figure. The concept derives from the play on of words of \"art piece\" and \"art\" \"peace\" and the art consists of peace signs holding various objects that represent different crafts and nods to pop culture, nostalgia and my inspirations. Over a span of two years, I illustrated 760 elements that were combined in a variety of compositions to create 5,000 unique artworks. Video by Carlo Liou of Rise Above & Prosper, a Chicago-based creative production company. Lookbook photography by Jonathan Vega.",
             "Visit the CoursePeace NFT mint website <a href=\"https://mint.coursepeace.com/\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>."
         ],
         galleryLayout: [1, 2, 2, 2, 2, 2, 2, 2],  // Total: 15 items (13 images + 2 videos)
